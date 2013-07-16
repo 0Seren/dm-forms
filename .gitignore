@@ -2,7 +2,7 @@ bin
 logs
 project/project
 project/target
-target
+target/*
 tmp
 *.db
 *~
@@ -12,7 +12,7 @@ tmp
 .metadata
 .classpath
 .project
-.settings
+.settings/*
 .cache
 .directory
 .target
