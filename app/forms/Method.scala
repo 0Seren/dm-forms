@@ -5,6 +5,7 @@ import scala.xml.Elem
 import play.api.mvc.{ Call => PlayCall }
 import scalatags._
 
+
 sealed abstract class Method(value: String) {
   def forRequest: String = value
 }

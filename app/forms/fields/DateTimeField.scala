@@ -8,13 +8,22 @@ import org.joda.time.LocalDateTime
 import forms.validators.ValidationError
 import forms.widgets.DateTimeInput
 
+/**
+ * Sets common methods for DateTimeField and DateTimeFieldOptional.
+ */
 abstract class BaseDateTimeField[T](
     name: String, 
     dateParser: DateTimeFormatter = BaseDateField.usFormat, 
     timeParser: DateTimeFormatter = BaseTimeField.defaultParser)(implicit tag: TypeTag[T]) extends Field[T](name) {
   
+  /**
+   * Sets the widget for DateTimeField and DateTimeFieldOptional.
+   */
   override def widget = new DateTimeInput(name, required)
   
+  /**
+   * Checks to see if the fields were filled in and Returns a ValidationError if there is an issue.
+   */
   override def checkRequired(rawData: Seq[String]): Either[ValidationError, Seq[String]] = {
     rawData.map(_.trim).filter(_ != "") match {
       case Seq() => if(required) Left(ValidationError(errorMessages("required"))) else Right(Seq[String]())
@@ -25,7 +34,11 @@ abstract class BaseDateTimeField[T](
 }
 
 object BaseDateTimeField {
+  
   // s(0) is the date, s(1) is the time
+  /**
+   * Parses both the Date and the Time correctly.
+   */
   def asValue(dateString: String, timeString: String, dateParser: DateTimeFormatter, timeParser: DateTimeFormatter): Either[ValidationError, LocalDateTime] = {
     try {
       val date = BaseDateField.asValue(dateString, dateParser)
@@ -42,16 +55,30 @@ object BaseDateTimeField {
   }
 }
 
+/**
+ * Creates a required DateTimeField.
+ */
 class DateTimeField(name: String, dateParser: DateTimeFormatter = BaseDateField.usFormat, 
     timeParser: DateTimeFormatter = BaseTimeField.defaultParser) extends BaseDateTimeField[LocalDateTime](name, dateParser, timeParser) {
+  
+  /**
+   * Returns a ValidationError if empty or if improper format, ad returns LocalDateTime if fields are filled in correctly.
+   */
   def asValue(s: Seq[String]): Either[ValidationError, LocalDateTime] = {
     BaseDateTimeField.asValue(s(0), s(1), dateParser, timeParser)
   }
 }
 
+/**
+ * Creates an optional DateTimeField.
+ */
 class DateTimeFieldOptional(name: String, dateParser: DateTimeFormatter = BaseDateField.usFormat, 
     timeParser: DateTimeFormatter = BaseTimeField.defaultParser) extends BaseDateTimeField[Option[LocalDateTime]](name, dateParser, timeParser) {
   
+  /**
+   * Returns None if no input, Option[LocalDateTime] if formatted correctly, and ValidationError if
+   * only one thing is filled in or are in incorrect format.
+   */
   def asValue(s: Seq[String]): Either[ValidationError, Option[LocalDateTime]] = {
     s match {
       case Seq() => Right(None)

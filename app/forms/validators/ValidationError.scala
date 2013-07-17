@@ -7,10 +7,25 @@ import scala.xml.{NodeSeq, Text}
  * with a Field or Form. An empty ValidationError means nothing is wrong.
  */
 class ValidationError(val messages: List[NodeSeq]) extends Seq[NodeSeq] {
+  
+  /**
+   * Returns the message at that index.
+   */
   def apply(idx: Int) = messages(idx)
+  
+  /**
+   * Creates an iterator for the messages.
+   */
   def iterator = messages.iterator
+  
+  /**
+   * Determines how many messages there are.
+   */
   def length = messages.length
   
+  /**
+   * Renders each individual message using Bootstrap.
+   */
   def render: NodeSeq = messages match {
     case Nil => NodeSeq.Empty
     case _ => messages.flatMap(msg => 
@@ -24,8 +39,18 @@ class ValidationError(val messages: List[NodeSeq]) extends Seq[NodeSeq] {
   }
 }
 
+/**
+ * Helper for class ValidationError.
+ */
 object ValidationError {
+  
+  /**
+   * Creates a new ValidationError from a String.
+   */
   def apply(message: String): ValidationError = ValidationError(List(Text(message)))
-    
+  
+  /**
+   * Creates a new ValidationError from a List[NodeSeq]
+   */
   def apply(messages: List[NodeSeq]): ValidationError = new ValidationError(messages)
 }

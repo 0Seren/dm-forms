@@ -12,6 +12,9 @@ import javax.mail.internet.AddressException
  */
 abstract class Validator[T] extends Function[T, ValidationError]
 
+/**
+ * A type of Validator for a required field.
+ */
 object Validator {
   def apply[T](f: Function[T, ValidationError]): Validator[T] = {
     new Validator[T] {
@@ -20,6 +23,9 @@ object Validator {
   }
 }
 
+/**
+ * A type of Validator for an optional field.
+ */
 object OptionValidator {
   def apply[T](validators: List[Validator[T]]): List[Validator[Option[T]]] = {
     validators.map(vdator => 
@@ -32,30 +38,46 @@ object OptionValidator {
     )
   }
 }
+
+/**
+ * Creates a min length validator.
+ */
 class MinLengthValidator(minLength: Int, msg: (String => String)) extends Validator[String] {
   def apply(str: String): ValidationError = {
     if (str.length < minLength) ValidationError(msg(str)) else ValidationError(Nil)
   }
 } 
 
+/**
+ * Creates a max length validator.
+ */
 class MaxLengthValidator(maxLength: Int, msg: (String => String)) extends Validator[String] {
   def apply(str: String): ValidationError = {
     if (str.length > maxLength) ValidationError(msg(str)) else ValidationError(Nil)
   }
 }
 
+/**
+ * Creates a min value validator.
+ */
 class MinValueValidator[T](minValue: T, msg: (T => String))(implicit n: Numeric[T]) extends Validator[T] {
   def apply(value: T): ValidationError = {
     if (n.lt(value, minValue)) ValidationError(msg(value)) else ValidationError(Nil)
   }
 }
 
+/**
+ * Creates a max value validator.
+ */
 class MaxValueValidator[T](maxValue: T, msg: (T => String))(implicit n: Numeric[T]) extends Validator[T] {
   def apply(value: T): ValidationError = {
     if (n.gt(value, maxValue)) ValidationError(msg(value)) else ValidationError(Nil)
   }
 }
 
+/**
+ * Creates an email validator.
+ */
 object EmailValidator extends Validator[String] {
   def apply(str: String): ValidationError = {
     try {

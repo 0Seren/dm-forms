@@ -7,10 +7,16 @@ import java.sql.Time
 
 import scalatags._
 
+/**
+ * A widget that creates a time field using Bootstrap-Timepicker.
+ */
 class TimeInput(
   required: Boolean,
   attrs: MetaData = Null) extends Widget(required, attrs) { 
 
+  /**
+   * Renders the time field using xml.
+   */
   def render(name: String, value: Seq[String], attrList: MetaData = Null) = {
     val theValue = if (value.isEmpty) "" else value(0)
     <div class="input-append bootstrap-timepicker">
@@ -18,6 +24,9 @@ class TimeInput(
     </div>
   }
   
+  /**
+   * Creates the scripts for the bootstrap-timepicker.
+   */
   override def scripts: NodeSeq =
     <script type="text/javascript">
         $('.timepicker').timepicker({{

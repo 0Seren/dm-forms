@@ -6,10 +6,16 @@ import forms.validators.ValidationError
 
 import scalatags._
 
+/**
+ * A widget that creates a datepicker field using bootstrap-datepicker and masked inputs.
+ */
 class DateInput(
   required: Boolean,
   attrs: MetaData = Null) extends Widget(required, attrs) {
   
+  /**
+   * Renders the field with the datepicker and masked inputs using xml.
+   */
   def render(name: String, value: Seq[String], attrList: MetaData = Null) = {
     val theValue = if (value.isEmpty) "" else value(0)
     <div class="input-append date">
@@ -17,6 +23,9 @@ class DateInput(
     </div>
   }
   
+  /**
+   * Creates the datepicker script and the datepicker input masking
+   */  
   override def scripts: NodeSeq = 
     <script>
     $('.input-append.date').datepicker({{
@@ -25,7 +34,7 @@ class DateInput(
     }});
 	</script><script>
 	jQuery(function($){{
-		$('.datepicker').mask('99/99/99?99',{{ placeholder:'_' }});
+		$('.datepicker').mask('99/99/9999',{{ placeholder:'_' }});
   	}});
 	</script>
     

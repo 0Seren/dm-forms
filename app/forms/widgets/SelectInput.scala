@@ -2,12 +2,18 @@ package forms.widgets
 
 import scala.xml._
 
+/**
+ * A widget that creates a select input. 
+ */
 class SelectInput(
     required: Boolean,
     val options: List[String],
     attrs: MetaData = Null,
     val allowMultiple: Boolean = false) extends Widget(required, attrs) {
 
+  /**
+   * Renders the select input using xml.
+   */
   def render(name: String, value: Seq[String], attrList: MetaData = Null) = {
     // if allowMultiple is false, only allow one value
     val limitedVal = if (allowMultiple) value else if (value.isEmpty) Nil else List(value.head)
@@ -24,6 +30,9 @@ class SelectInput(
     </select> % attrs % multAttr % attrList // <select> doesn't allow a required attribute
   }
   
+  /**
+   * Creates the real values to be returned.
+   */
   private[this] def realValue(value: Seq[String]): Boolean = {
     def goodIndex(s: String): Boolean = {
       try {

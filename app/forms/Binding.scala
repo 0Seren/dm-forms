@@ -8,6 +8,11 @@ import fields.Field
 import play.api.mvc.MultipartFormData.FilePart
 import forms.fields.BaseFileField
 
+/**
+ * Binding is what binds the form together and makes it work well as a whole
+ * before, during, and after the page is submitted. Makes sure that errors are
+ * caught and keeps values in the fields if page is reloaded. Makes forms persistable.
+ */
 object Binding {
   def apply(form: Form): InitialBinding = {
     new InitialBinding(form)
@@ -55,6 +60,11 @@ object Binding {
   }
 }
 
+/**
+ * Binding is what binds the form together and makes it work well as a whole
+ * before, during, and after the page is submitted. Makes sure that errors are
+ * caught and keeps values in the fields if page is reloaded. Makes forms persistable.
+ */
 abstract class Binding(val form: Form, val rawData: Map[String, Seq[String]], val files: Seq[FilePart[_]]) {
   def formErrors: ValidationError = new ValidationError(Nil)
   def fieldErrors: Map[String, ValidationError] = Map()
@@ -67,18 +77,33 @@ abstract class Binding(val form: Form, val rawData: Map[String, Seq[String]], va
   }
 }
 
+/**
+ * Binding is what binds the form together and makes it work well as a whole
+ * before, during, and after the page is submitted. Makes sure that errors are
+ * caught and keeps values in the fields if page is reloaded. Makes forms persistable.
+ */
 class InitialBinding(form: Form) extends Binding(form, Map(), Nil) {
   override def asStringSeq(field: Field[_]): Seq[String] = {
     field.initial
   }
 }
 
+/**
+ * Binding is what binds the form together and makes it work well as a whole
+ * before, during, and after the page is submitted. Makes sure that errors are
+ * caught and keeps values in the fields if page is reloaded. Makes forms persistable.
+ */
 class InvalidBinding(form: Form, rawData: Map[String, Seq[String]], files: Seq[FilePart[_]], _fieldErrors: Map[String, ValidationError], _formErrors: ValidationError)
 	extends Binding(form, rawData, files) {
   override def formErrors = _formErrors
   override def fieldErrors = _fieldErrors
 }
 
+/**
+ * Binding is what binds the form together and makes it work well as a whole
+ * before, during, and after the page is submitted. Makes sure that errors are
+ * caught and keeps values in the fields if page is reloaded. Makes forms persistable.
+ */
 class ValidBinding(form: Form, rawData: Map[String, Seq[String]], files: Seq[FilePart[_]], val cleanedData: Map[String, Any])
 	extends Binding(form, rawData, files) {
   override def hasErrors: Boolean = false
