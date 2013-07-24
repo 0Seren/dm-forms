@@ -41,6 +41,7 @@ Table of Contents
 	<li><a href="#about-play-forms">About</a></li>
 	<li><a href="#basic-implementation">Basic Implementation</a></li>
 	<li><a href="#handling-user-input">Input Handling</a></li>
+	<li><a href="#dependencies">Dependencies</a></li>
 	<li><a href="#authors-and-contributors">Authors</a></li>
 	<li><a href="#support-or-contact">Support or Contact</a></li>
 </ul>
@@ -104,11 +105,21 @@ In order to handle a user's input you'll need to make sure that there were no er
 </code></pre>
 </p>
 
+<h3>
+<a name="dependencies" class="anchor" href="#dependencies"><span class="octicon octicon-link"></span></a>Dependencies</h3>
+<p>
+As mentioned <a href="#about-play-forms">above</a>, Play-Forms does have dependencies on <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a>, <a href="http://jquery.com/">jQuery</a>, <a href="http://jdewit.github.io/bootstrap-timepicker/">bootstrap-timepicker</a>, and <a href="http://eternicode.github.io/bootstrap-datepicker/">bootstrap-datepicker</a>. Below each dependency is listed with what is dependent on it.</p>
+<h4>jQuery</h4>
+<p>Bootstrap is dependent upon jQuery.</p>
 
+<h4>Bootstrap</h4>
+<p>Bootstrap-timepicker and bootstrap-datepicker are both dependent upon Bootstrap. Along with these, BaseAutocompleteField and its subclasses use Bootstrap's typeahead javascript in their widgets, field help text uses Bootstrap's tooltip javascript, and ValidationErrors use Bootstrap's Validation states base CSS to appear.</p>
 
-
-
-
+<h4>Bootstrap-timepicker</h4>
+<p>BaseTimeField, BaseDateTimeField, and their subclasses all use bootstrap-timepicker in their widgets.
+</p>
+<h4>Bootstrap-datepicker</h4>
+<p>BaseDateField, BaseDateTimeField, and their subclasses all use bootstrap-datepicker in their widgets.</p>
 
 
 
