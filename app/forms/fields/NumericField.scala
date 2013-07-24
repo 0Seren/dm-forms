@@ -1,8 +1,10 @@
 package forms.fields
 
+import scala.reflect.runtime.universe._
+import scala.xml.Text
+
 import forms.widgets._
 import forms.validators._
-import scala.reflect.runtime.universe._
 
 // TODO: use type="number" from HTML5
 /**
@@ -105,11 +107,13 @@ object NumericField {
   def minAndMaxValidators[T](minValue: Option[T], maxValue: Option[T])(implicit n: Numeric[T]): List[Validator[T]] = {
     val min = minValue match {
       case None => Nil
-      case Some(min) => List(new MinValueValidator[T](min, (x => "This value must be at least %s.".format(min))))
+      case Some(min) => List(new MinValueValidator[T](min, 
+          (x => Text(s"This value must be at least ${min}."))))
     }
     val max = maxValue match {
       case None => Nil
-      case Some(max) => List(new MaxValueValidator[T](max, (x => "This value must be at most %s.".format(max))))
+      case Some(max) => List(new MaxValueValidator[T](max, 
+          (x => Text(s"This value must be at most ${max}."))))
     }
     min ++ max
   }

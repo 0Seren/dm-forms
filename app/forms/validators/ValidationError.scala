@@ -50,6 +50,11 @@ object ValidationError {
   def apply(message: String): ValidationError = ValidationError(List(Text(message)))
   
   /**
+   * Creates a new `ValidationError` from a single `NodeSeq`
+   */
+  def apply(message: NodeSeq): ValidationError = ValidationError(List(message))
+  
+  /**
    * Creates a new ValidationError from a List[NodeSeq]
    */
   def apply(messages: List[NodeSeq]): ValidationError = new ValidationError(messages)

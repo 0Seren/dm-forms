@@ -93,11 +93,13 @@ object TextField {
   def minAndMaxValidators(minLength: Option[Int], maxLength: Option[Int]): List[Validator[String]] = {
     val min = minLength match {
       case None => Nil
-      case Some(min) => List(new MinLengthValidator(min, (s => "This value must have at least %d characters. (It has %d.)".format(min, s.length))))
+      case Some(min) => List(new MinLengthValidator(min, 
+          (s => Text(s"This value must have at least ${min} characters. (It has ${s.length}.)"))))
     }
     val max = maxLength match {
       case None => Nil
-      case Some(max) => List(new MaxLengthValidator(max, (s => "This value must have no more than %d characters. (It has %d.)".format(max, s.length))))
+      case Some(max) => List(new MaxLengthValidator(max, 
+          (s => Text(s"This value must have no more than ${max} characters. (It has ${s.length}.)"))))
     }
     min ++ max
   }
