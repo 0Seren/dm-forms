@@ -51,7 +51,7 @@ Table of Contents
 <a name="about-play-forms" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About Play-Forms
 </h3>
 <p>
-Play-Forms is a tool that was developed to help create and handle html forms in play in an easier to use way than are defaultly implemented. To use play-forms with all of its functions you'll need to implement <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a>, <a href="http://jquery.com/">jQuery</a>, <a href="http://jdewit.github.io/bootstrap-timepicker/">bootstrap-timepicker</a>, and <a href="http://eternicode.github.io/bootstrap-datepicker/">bootstrap-datepicker</a> which can all be found and implemented with <a href="http://www.webjars.org/">webjars</a>. You do not have to use any or all of these for Play-Forms to work, but some features will not be available without them.
+Play-Forms is a tool that was developed using Scala to help create and handle html forms in play in an easier to use way than the way that is defaultly implemented in play. To use play-forms with all of its functions you'll need to implement <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a>, <a href="http://jquery.com/">jQuery</a>, <a href="http://jdewit.github.io/bootstrap-timepicker/">bootstrap-timepicker</a>, and <a href="http://eternicode.github.io/bootstrap-datepicker/">bootstrap-datepicker</a> which can all be found and implemented with <a href="http://www.webjars.org/">webjars</a>. You do not have to use any or all of these for Play-Forms to work, but some features will not be available without them.
 </p>
 
 <h3>
@@ -74,7 +74,7 @@ After the form object has been created, you can go ahead and create whichever fi
 </pre></code>
 Now that we have created our form, we can go ahead and wrap it in a binding, and then send it to our views.
 <pre><code>def handleGetRequest() = Action { implicit req =>
-Ok(some.view(Binding(BasicFormExample)))
+    Ok(some.view(Binding(BasicFormExample)))
 }
 </pre></code>
 Now in the view you need simply to call <code>@Binding.render()</code> wherever you wish the form to display in your html, and it will automatically render itself!
