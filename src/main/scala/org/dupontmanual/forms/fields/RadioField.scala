@@ -1,7 +1,7 @@
-package forms.fields
+package org.dupontmanual.forms.fields
 
-import forms.widgets._
-import forms.validators.ValidationError
+import org.dupontmanual.forms.widgets._
+import org.dupontmanual.forms.validators.ValidationError
 
 /*
  * radio field creates a radio field that returns choices._2 when the user selects the radio field

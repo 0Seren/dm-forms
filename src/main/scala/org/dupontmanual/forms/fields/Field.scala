@@ -1,10 +1,10 @@
-package forms.fields
+package org.dupontmanual.forms.fields
 
 import scala.xml._
-import forms.widgets._
-import forms.validators._
-import forms.Form
-import forms.Binding
+import org.dupontmanual.forms.widgets._
+import org.dupontmanual.forms.validators._
+import org.dupontmanual.forms.Form
+import org.dupontmanual.forms.Binding
 import play.api.templates.Html
 import scala.reflect.runtime.universe._
 

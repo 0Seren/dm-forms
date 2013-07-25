@@ -1,8 +1,8 @@
-package forms.fields
+package org.dupontmanual.forms.fields
 
-import forms.validators.ValidationError
-import forms.widgets.PhoneInput
-import forms._
+import org.dupontmanual.forms.validators.ValidationError
+import org.dupontmanual.forms.widgets.PhoneInput
+import org.dupontmanual.forms._
 
 /**
  * Creates methods common to both PhoneField and PhoneFieldOptional.

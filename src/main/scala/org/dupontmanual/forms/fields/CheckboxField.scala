@@ -1,7 +1,7 @@
-package forms.fields
+package org.dupontmanual.forms.fields
 
-import forms.widgets._
-import forms.validators.ValidationError
+import org.dupontmanual.forms.widgets._
+import org.dupontmanual.forms.validators.ValidationError
 
 /**
  * CheckboxField takes a name: String and choices: List[(String, T)]. The String in the tuples in choices

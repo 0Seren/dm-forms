@@ -1,7 +1,7 @@
-package forms.fields
+package org.dupontmanual.forms.fields
 
-import forms.validators.ValidationError
-import forms.widgets.PasswordInput
+import org.dupontmanual.forms.validators.ValidationError
+import org.dupontmanual.forms.widgets.PasswordInput
 
 /*
  * PasswordField returns the string the user inputs.

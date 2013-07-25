@@ -1,7 +1,7 @@
-package forms.widgets
+package org.dupontmanual.forms.widgets
 
 import scala.xml._
-import forms.validators.ValidationError
+import org.dupontmanual.forms.validators.ValidationError
 
 /**
  * A Widget that uses the Bootstrap typeahead javascript.

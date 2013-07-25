@@ -17,7 +17,6 @@ resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/release
 libraryDependencies ++= Seq(
     "org.webjars" % "webjars-play_2.10" % "2.1.0-3",
     "javax.mail" % "mail" % "1.4.7",
-    "com.scalatags" % "scalatags_2.10" % "0.1.2",
     "org.webjars" % "jquery" % "2.0.0",
     "org.webjars" % "bootstrap" % "2.3.2",
     "org.webjars" % "jquery-ui" % "1.10.2-1",

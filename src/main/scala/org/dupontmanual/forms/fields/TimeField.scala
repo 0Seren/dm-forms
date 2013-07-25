@@ -1,12 +1,12 @@
-package forms.fields
+package org.dupontmanual.forms.fields
 
 import scala.reflect.runtime.universe.TypeTag
 
 import org.joda.time.LocalTime
 import org.joda.time.format.{ DateTimeFormat, DateTimeFormatter, DateTimeFormatterBuilder }
 
-import forms.validators.ValidationError
-import forms.widgets.TimeInput
+import org.dupontmanual.forms.validators.ValidationError
+import org.dupontmanual.forms.widgets.TimeInput
 
 /*
  * timeField will return either a Validation Error or a org.joda.time.LocalTime

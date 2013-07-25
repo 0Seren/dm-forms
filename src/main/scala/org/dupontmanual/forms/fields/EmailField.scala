@@ -1,6 +1,6 @@
-package forms.fields
-import forms.validators._
-import forms.widgets.TextInput
+package org.dupontmanual.forms.fields
+import org.dupontmanual.forms.validators._
+import org.dupontmanual.forms.widgets.TextInput
 
 /**
  * Sets methods for both EmailField and EmailFieldOptional

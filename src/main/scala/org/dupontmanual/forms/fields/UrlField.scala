@@ -1,9 +1,9 @@
-package forms.fields
+package org.dupontmanual.forms.fields
 
 import java.net.{MalformedURLException, URL}
 
-import forms.validators._
-import forms.widgets.TextInput
+import org.dupontmanual.forms.validators._
+import org.dupontmanual.forms.widgets.TextInput
 
 /*
  * creates an input type of url and requires a correctly formatted url. Returns a java.net.URL

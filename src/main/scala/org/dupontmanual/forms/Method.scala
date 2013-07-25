@@ -1,4 +1,4 @@
-package forms
+package org.dupontmanual.forms
 
 import scala.language.implicitConversions
 import scala.xml.Elem

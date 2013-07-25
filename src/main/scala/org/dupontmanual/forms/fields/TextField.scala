@@ -1,10 +1,10 @@
-package forms.fields
+package org.dupontmanual.forms.fields
 
 import scala.xml.{Attribute, MetaData, Null, Text}
 
 
-import forms.validators._
-import forms.widgets._
+import org.dupontmanual.forms.validators._
+import org.dupontmanual.forms.widgets._
 
 /**
  * Creates the methods common to both TextField and TextFieldOptional

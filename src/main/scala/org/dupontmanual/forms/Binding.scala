@@ -1,12 +1,12 @@
-package forms
+package org.dupontmanual.forms
 
-import validators.ValidationError
+import org.dupontmanual.forms.validators.ValidationError
 import scala.xml.Elem
 import scala.xml.NodeSeq
 import scala.xml.Node
-import fields.Field
+import org.dupontmanual.forms.fields.Field
 import play.api.mvc.MultipartFormData.FilePart
-import forms.fields.BaseFileField
+import org.dupontmanual.forms.fields.BaseFileField
 
 /** The companion object for the abstract class `Binding`. The object's `apply`
   * methods are used to combine forms with data, which triggers form validation.

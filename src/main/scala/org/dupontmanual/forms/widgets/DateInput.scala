@@ -1,9 +1,7 @@
-package forms.widgets
+package org.dupontmanual.forms.widgets
 
 import scala.xml._
-import forms.validators.ValidationError
-
-import scalatags._
+import org.dupontmanual.forms.validators.ValidationError
 
 /**
  * A widget that creates a datepicker field using bootstrap-datepicker and masked inputs.

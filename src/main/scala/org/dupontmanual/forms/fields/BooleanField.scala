@@ -1,6 +1,6 @@
-package forms.fields
-import forms.validators.ValidationError
-import forms.widgets.CheckboxInput
+package org.dupontmanual.forms.fields
+import org.dupontmanual.forms.validators.ValidationError
+import org.dupontmanual.forms.widgets.CheckboxInput
 
 /**
  * BooleanField takes a name or label for the field, and a string that will appear to the right

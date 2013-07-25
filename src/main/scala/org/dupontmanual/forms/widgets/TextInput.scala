@@ -1,4 +1,4 @@
-package forms.widgets
+package org.dupontmanual.forms.widgets
 
 import scala.xml._
 

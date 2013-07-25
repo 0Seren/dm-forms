@@ -1,15 +1,12 @@
-package forms
+package org.dupontmanual.forms
 
 import scala.xml._
-import forms.fields._
-import forms.widgets.Widget
-import forms.validators.ValidationError
+import org.dupontmanual.forms.fields._
+import org.dupontmanual.forms.widgets.Widget
+import org.dupontmanual.forms.validators.ValidationError
 import play.api.mvc.Request
 import play.api.templates.Html
 import scala.reflect.runtime.universe._
-
-import fields._
-import validators.ValidationError
 
 /**
  * Used as the template for all forms to be based off of.

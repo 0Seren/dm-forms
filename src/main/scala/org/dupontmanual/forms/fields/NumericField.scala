@@ -1,10 +1,10 @@
-package forms.fields
+package org.dupontmanual.forms.fields
 
 import scala.reflect.runtime.universe._
 import scala.xml.Text
 
-import forms.widgets._
-import forms.validators._
+import org.dupontmanual.forms.widgets._
+import org.dupontmanual.forms.validators._
 
 // TODO: use type="number" from HTML5
 /**

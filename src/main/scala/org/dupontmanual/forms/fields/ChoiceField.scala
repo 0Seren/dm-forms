@@ -1,7 +1,7 @@
-package forms.fields
+package org.dupontmanual.forms.fields
 
-import forms.widgets.SelectInput
-import forms.validators.ValidationError
+import org.dupontmanual.forms.widgets.SelectInput
+import org.dupontmanual.forms.validators.ValidationError
 
 /**
  * Sets the widget for ChoiceField and ChoiceFieldOptional

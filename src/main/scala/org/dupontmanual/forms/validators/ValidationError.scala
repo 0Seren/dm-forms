@@ -1,4 +1,4 @@
-package forms.validators
+package org.dupontmanual.forms.validators
 
 import scala.xml.{NodeSeq, Text}
 

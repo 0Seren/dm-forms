@@ -1,12 +1,12 @@
-package forms.fields
+package org.dupontmanual.forms.fields
 
 import scala.reflect.runtime.universe._
 
 import org.joda.time.LocalDate
 import org.joda.time.format.{ DateTimeFormat, DateTimeFormatter }
 
-import forms.validators.ValidationError
-import forms.widgets.DateInput
+import org.dupontmanual.forms.validators.ValidationError
+import org.dupontmanual.forms.widgets.DateInput
 
 /**
  * Contains methods shared by DateField and DateFieldOptioanal. 

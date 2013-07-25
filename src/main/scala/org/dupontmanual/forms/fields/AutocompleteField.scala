@@ -1,8 +1,8 @@
-package forms.fields
+package org.dupontmanual.forms.fields
 
-import forms.validators.ValidationError
-import forms.widgets.AutocompleteInput
-import forms._
+import org.dupontmanual.forms.validators.ValidationError
+import org.dupontmanual.forms.widgets.AutocompleteInput
+import org.dupontmanual.forms._
 
 /**
  * Sets the widget and a helper method for AutocompleteFied and AutocompleteFieldOptional.
