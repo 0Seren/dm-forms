@@ -41,6 +41,7 @@ Table of Contents
 	<li><a href="#about-dm-forms">About</a></li>
 	<li><a href="#basic-implementation">Basic Implementation</a></li>
 	<li><a href="#handling-user-input">Input Handling</a></li>
+	<li><a href="#forms-as-classes">Forms as Classes</a></li>
 	<li><a href="#dependencies">Dependencies</a></li>
 	<li><a href="#authors-and-contributors">Authors</a></li>
 	<li><a href="#support-or-contact">Support or Contact</a></li>
@@ -62,9 +63,11 @@ To create a basic form you'll need to import the following:
 <pre><code>import org.dupontmanual.forms._
 import org.dupontmanual.forms.fields._</pre></code>
 Once these are imported you can go ahead and create a new form object as follows:
+<br/><br/>
 <pre><code>object BasicFormExample extends Form {
 }</pre></code>
 After the form object has been created, you can go ahead and create whichever fields you would like (see our <a href="api/index.html">api</a> page for more details about available fields) within the form object and add them to the list of fields in the order you wish for them to appear as follows:
+<br/><br/>
 <pre><code>object BasicFormExample extends Form {
     val numericField = new NumericFieldOptional[Double]("Double")
     val passwordField = new PasswordFieldOptional("Password")
@@ -74,11 +77,12 @@ After the form object has been created, you can go ahead and create whichever fi
 }
 </pre></code>
 Now that we have created our form, we can go ahead and wrap it in a binding, and then send it to our views.
+<br/><br/>
 <pre><code>def handleGetRequest() = Action { implicit req =>
     Ok(some.view(Binding(BasicFormExample)))
 }
 </pre></code>
-Now in the view you need simply to call <code>@Binding.render()</code> wherever you wish the form to display in your html, and it will automatically render itself!
+Now in the view you need simply to call <code>@Binding.render()</code> wherever you wish the form to display in your html, and it will automatically render itself. If you wish to see an example play project that uses dm-Forms, you can do so <a href="https://github.com/dupontmanual/dm-forms-example">here</a>.
 </p>
 
 <h3>
@@ -105,6 +109,31 @@ In order to handle a user's input you'll need to make sure that there were no er
 </code></pre>
 </p>
 
+<h3><a name="forms-as-classes" class="anchor" href="#forms-as-classes"><span class="octicon octicon-link"></span></a>Forms as Classes</h3>
+<p>
+It is somewhat easy to create a form as a class instead of an object so as to allow the passing of parameters to a form. To do so, you need to simply declare it as a class and add any parameters you want to it:
+<pre><code>class FormAsClass(textFieldName: String) extends Form{
+    val textF = new TextFieldOptional(textFieldName)
+    //...
+    val fields = List(textF/*, ...*/)
+}
+</code></pre>
+However, the issue with using forms as classes is that, in the handling of the user's input, you have to make sure that the parameters passed, if they're used to construct any part of the form, are the same as when the form was first constructed. For example, the following <strong>will not</strong> work:
+<br/><br/>
+<pre><code>def handleGetRequest() = Action { implicit req =>
+    Ok(some.view(Binding(FormAsClass("Name"))))
+}
+
+def handlePostRequest() = Action { implicit req =>
+    Binding(FormAsClass("DoB"), req) match {
+        //...
+    }
+}
+</code></pre>
+This means that if you pass a parameter that you had to compute, you will have to compute that value once more upon handling the form.
+</p>
+
+
 <h3>
 <a name="dependencies" class="anchor" href="#dependencies"><span class="octicon octicon-link"></span></a>Dependencies</h3>
 <p>
@@ -123,7 +152,7 @@ As mentioned <a href="#about-play-forms">above</a>, dm-Forms does have dependenc
 
 <h3>
 <a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-<p>dm-Forms was created and developed by Todd O'Bryan (<a href="https://github.com/toddobryan" class="user-mention">@toddobryan</a>) and Allen Boss (<a href="https://github.com/Seren-" class="user-mention">@Seren-</a>).</p>
+<p>dm-Forms was created and developed by Todd O'Bryan (<a href="https://github.com/toddobryan" class="user-mention">@toddobryan</a>) and Allen Boss (<a href="https://github.com/Seren-" class="user-mention">@Seren-</a>). Todd O'Bryan is a Computer Science teacher at <a href="http://dupontmanual.com/" targer="_blank">duPont Manual High School</a> and Allen Boss is a former student of Todd O'Bryan, and is now studying Computer Science at the University of Kentucky.</p>
 
 <h3>
 <a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
