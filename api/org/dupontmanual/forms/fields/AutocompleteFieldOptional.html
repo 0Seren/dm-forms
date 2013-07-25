@@ -1,0 +1,850 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>AutocompleteFieldOptional - org.dupontmanual.forms.fields.AutocompleteFieldOptional</title>
+          <meta name="description" content="AutocompleteFieldOptional - org.dupontmanual.forms.fields.AutocompleteFieldOptional" />
+          <meta name="keywords" content="AutocompleteFieldOptional org.dupontmanual.forms.fields.AutocompleteFieldOptional" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'org.dupontmanual.forms.fields.AutocompleteFieldOptional';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <img src="../../../../lib/class_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="org">org</a>.<a href="../../package.html" class="extype" name="org.dupontmanual">dupontmanual</a>.<a href="../package.html" class="extype" name="org.dupontmanual.forms">forms</a>.<a href="package.html" class="extype" name="org.dupontmanual.forms.fields">fields</a></p>
+        <h1>AutocompleteFieldOptional</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">AutocompleteFieldOptional</span><span class="result"> extends <a href="BaseAutocompleteField.html" class="extype" name="org.dupontmanual.forms.fields.BaseAutocompleteField">BaseAutocompleteField</a>[<span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>AutocompleteFieldOptional takes a name, which is used for the label of the field, and a
+list[Any] which is used to create the options from which the user chooses. AutocompleteFieldOptional
+returns an Option[String].
+</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="BaseAutocompleteField.html" class="extype" name="org.dupontmanual.forms.fields.BaseAutocompleteField">BaseAutocompleteField</a>[<span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]], <a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a>[<span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="org.dupontmanual.forms.fields.AutocompleteFieldOptional"><span>AutocompleteFieldOptional</span></li><li class="in" name="org.dupontmanual.forms.fields.BaseAutocompleteField"><span>BaseAutocompleteField</span></li><li class="in" name="org.dupontmanual.forms.fields.Field"><span>Field</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="org.dupontmanual.forms.fields.AutocompleteFieldOptional#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(name:String,list:List[Any]):org.dupontmanual.forms.fields.AutocompleteFieldOptional"></a>
+      <a id="&lt;init&gt;:AutocompleteFieldOptional"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">AutocompleteFieldOptional</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="list">list: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Any">Any</span>]</span>)</span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:AnyRef):Boolean"></a>
+      <a id="!=(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.Any#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:AnyRef):Boolean"></a>
+      <a id="==(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.Any#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#asStringSeq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asStringSeq(value:Option[T]):Seq[String]"></a>
+      <a id="asStringSeq(Option[Option[String]]):Seq[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asStringSeq</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>)</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Determines how the user's input will be converted to a string before being
+processed in asValue.</p><div class="fullcomment"><div class="comment cmt"><p>Determines how the user's input will be converted to a string before being
+processed in asValue.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.AutocompleteFieldOptional#asValue" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asValue(s:Seq[String]):Either[org.dupontmanual.forms.validators.ValidationError,Option[String]]"></a>
+      <a id="asValue(Seq[String]):Either[ValidationError,Option[String]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asValue</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Either">Either</span>[<a href="../validators/ValidationError.html" class="extype" name="org.dupontmanual.forms.validators.ValidationError">ValidationError</a>, <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns None if field is empty or Some(userInput: String) if filled.</p><div class="fullcomment"><div class="comment cmt"><p>Returns None if field is empty or Some(userInput: String) if filled.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.dupontmanual.forms.fields.AutocompleteFieldOptional">AutocompleteFieldOptional</a> → <a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#asWidget" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asWidget(bound:org.dupontmanual.forms.Binding,widget:org.dupontmanual.forms.widgets.Widget,attrs:scala.xml.MetaData,onlyInitial:Boolean):scala.xml.NodeSeq"></a>
+      <a id="asWidget(Binding,Widget,MetaData,Boolean):NodeSeq"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asWidget</span><span class="params">(<span name="bound">bound: <a href="../Binding.html" class="extype" name="org.dupontmanual.forms.Binding">Binding</a></span>, <span name="widget">widget: <a href="../widgets/Widget.html" class="extype" name="org.dupontmanual.forms.widgets.Widget">Widget</a> = <span class="symbol">widget</span></span>, <span name="attrs">attrs: <span class="extype" name="scala.xml.MetaData">MetaData</span> = <span class="symbol">Null</span></span>, <span name="onlyInitial">onlyInitial: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result">: <span class="extype" name="scala.xml.NodeSeq">NodeSeq</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Renders the widget, and sends it any xml attributes that the widget should include, such as height and id.</p><div class="fullcomment"><div class="comment cmt"><p>Renders the widget, and sends it any xml attributes that the widget should include, such as height and id.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#autoId" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="autoId(form:org.dupontmanual.forms.Form):Option[String]"></a>
+      <a id="autoId(Form):Option[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">autoId</span><span class="params">(<span name="form">form: <a href="../Form.html" class="extype" name="org.dupontmanual.forms.Form">Form</a></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Creates the id for the field while adhering to the format in Form.</p><div class="fullcomment"><div class="comment cmt"><p>Creates the id for the field while adhering to the format in Form.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#boundData" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="boundData(data:Seq[String],initial:Seq[String]):Seq[String]"></a>
+      <a id="boundData(Seq[String],Seq[String]):Seq[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">boundData</span><span class="params">(<span name="data">data: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="initial">initial: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns the bound data.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the bound data.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#checkRequired" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="checkRequired(rawData:Seq[String]):Either[org.dupontmanual.forms.validators.ValidationError,Seq[String]]"></a>
+      <a id="checkRequired(Seq[String]):Either[ValidationError,Seq[String]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">checkRequired</span><span class="params">(<span name="rawData">rawData: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Either">Either</span>[<a href="../validators/ValidationError.html" class="extype" name="org.dupontmanual.forms.validators.ValidationError">ValidationError</a>, <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Makes sure that a value has been input for required fields.</p><div class="fullcomment"><div class="comment cmt"><p>Makes sure that a value has been input for required fields.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#clean" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clean(rawData:Seq[String]):Either[org.dupontmanual.forms.validators.ValidationError,T]"></a>
+      <a id="clean(Seq[String]):Either[ValidationError,Option[String]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clean</span><span class="params">(<span name="rawData">rawData: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Either">Either</span>[<a href="../validators/ValidationError.html" class="extype" name="org.dupontmanual.forms.validators.ValidationError">ValidationError</a>, <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Cleans the rawData by making sure there are no validationErrors.</p><div class="fullcomment"><div class="comment cmt"><p>Cleans the rawData by making sure there are no validationErrors.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#clean" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clean(rawData:String):Either[org.dupontmanual.forms.validators.ValidationError,T]"></a>
+      <a id="clean(String):Either[ValidationError,Option[String]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clean</span><span class="params">(<span name="rawData">rawData: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Either">Either</span>[<a href="../validators/ValidationError.html" class="extype" name="org.dupontmanual.forms.validators.ValidationError">ValidationError</a>, <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Cleans the rawData by making sure there are no validationErrors.</p><div class="fullcomment"><div class="comment cmt"><p>Cleans the rawData by making sure there are no validationErrors.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#defaultHeight" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="defaultHeight:String"></a>
+      <a id="defaultHeight:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">defaultHeight</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Determines the default height of a field.</p><div class="fullcomment"><div class="comment cmt"><p>Determines the default height of a field. Not used for fileFields, radioFields,
+or checkboxFields. Used to make sure text isn't cut off at the top and bottom
+and that fields line up with any icons/addons
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#errorMessages" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="errorMessages:Map[String,String]"></a>
+      <a id="errorMessages:Map[String,String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">errorMessages</span><span class="result">: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Sets some easy to use, global error messages, so messages al appear the same way.</p><div class="fullcomment"><div class="comment cmt"><p>Sets some easy to use, global error messages, so messages al appear the same way.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#helpText" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="helpText:Option[scala.xml.NodeSeq]"></a>
+      <a id="helpText:Option[NodeSeq]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">helpText</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.xml.NodeSeq">NodeSeq</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">An Option[NodeSeq] that is used to help explain to the user something about the specific field.</p><div class="fullcomment"><div class="comment cmt"><p>An Option[NodeSeq] that is used to help explain to the user something about the specific field.
+Uses bootstrap to display.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#htmlInitialId" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="htmlInitialId(form:org.dupontmanual.forms.Form):String"></a>
+      <a id="htmlInitialId(Form):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">htmlInitialId</span><span class="params">(<span name="form">form: <a href="../Form.html" class="extype" name="org.dupontmanual.forms.Form">Form</a></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Creates the id attribute for the field using the form's initial prefix.</p><div class="fullcomment"><div class="comment cmt"><p>Creates the id attribute for the field using the form's initial prefix.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#htmlInitialName" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="htmlInitialName(form:org.dupontmanual.forms.Form):String"></a>
+      <a id="htmlInitialName(Form):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">htmlInitialName</span><span class="params">(<span name="form">form: <a href="../Form.html" class="extype" name="org.dupontmanual.forms.Form">Form</a></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns the name of the field to be set as an html attribute after adding on the form's initial prefix.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the name of the field to be set as an html attribute after adding on the form's initial prefix.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#htmlName" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="htmlName(form:org.dupontmanual.forms.Form):String"></a>
+      <a id="htmlName(Form):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">htmlName</span><span class="params">(<span name="form">form: <a href="../Form.html" class="extype" name="org.dupontmanual.forms.Form">Form</a></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns the name of the field to be set as an html attribute after adding on the form's prefix.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the name of the field to be set as an html attribute after adding on the form's prefix.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#id" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="id(form:org.dupontmanual.forms.Form):Option[String]"></a>
+      <a id="id(Form):Option[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">id</span><span class="params">(<span name="form">form: <a href="../Form.html" class="extype" name="org.dupontmanual.forms.Form">Form</a></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Sets the id for the field while adhering to the format set in the form.</p><div class="fullcomment"><div class="comment cmt"><p>Sets the id for the field while adhering to the format set in the form.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#initial" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="initial:Seq[String]"></a>
+      <a id="initial:Seq[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">initial</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Creates the Seq[String] from initialVal that is used to set the initial value for the field.</p><div class="fullcomment"><div class="comment cmt"><p>Creates the Seq[String] from initialVal that is used to set the initial value for the field.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#initialVal" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="initialVal:Option[T]"></a>
+      <a id="initialVal:Option[Option[String]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">initialVal</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Determines what the initial value of the field will be.</p><div class="fullcomment"><div class="comment cmt"><p>Determines what the initial value of the field will be.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#label" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="label:Option[scala.xml.NodeSeq]"></a>
+      <a id="label:Option[NodeSeq]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">label</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.xml.NodeSeq">NodeSeq</span>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Creates a label for the field from the field name.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a label for the field from the field name.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#labelElem" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="labelElem(form:org.dupontmanual.forms.Form):scala.xml.NodeSeq"></a>
+      <a id="labelElem(Form):NodeSeq"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">labelElem</span><span class="params">(<span name="form">form: <a href="../Form.html" class="extype" name="org.dupontmanual.forms.Form">Form</a></span>)</span><span class="result">: <span class="extype" name="scala.xml.NodeSeq">NodeSeq</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns the label for the field as a NodeSeq
+</p><div class="fullcomment"><div class="comment cmt"><p>Returns the label for the field as a NodeSeq
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#render" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="render(bound:org.dupontmanual.forms.Binding):scala.xml.NodeSeq"></a>
+      <a id="render(Binding):NodeSeq"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">render</span><span class="params">(<span name="bound">bound: <a href="../Binding.html" class="extype" name="org.dupontmanual.forms.Binding">Binding</a></span>)</span><span class="result">: <span class="extype" name="scala.xml.NodeSeq">NodeSeq</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Displays the field label with it's widget, help text and any errors
+that occur with the field.</p><div class="fullcomment"><div class="comment cmt"><p>Displays the field label with it's widget, help text and any errors
+that occur with the field.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#required" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="required:Boolean"></a>
+      <a id="required:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">required</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Sets a required attribute for the field to see if the field
+is required or not.</p><div class="fullcomment"><div class="comment cmt"><p>Sets a required attribute for the field to see if the field
+is required or not. Is default set to false if the return type
+is an Option and true if not.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#requiresMultipartData" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="requiresMultipartData:Boolean"></a>
+      <a id="requiresMultipartData:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">requiresMultipartData</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Gets set to true when the field requires Multipart Form Data.</p><div class="fullcomment"><div class="comment cmt"><p>Gets set to true when the field requires Multipart Form Data.
+Multipart Form Data is required for FileFields.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#spacesSameAsBlank" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="spacesSameAsBlank:Boolean"></a>
+      <a id="spacesSameAsBlank:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">spacesSameAsBlank</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Determines if only spaces in a field should be treated the same way as a non-filled in field.</p><div class="fullcomment"><div class="comment cmt"><p>Determines if only spaces in a field should be treated the same way as a non-filled in field.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.BaseAutocompleteField#toJsArray" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toJsArray(s:List[Any]):String"></a>
+      <a id="toJsArray(List[Any]):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toJsArray</span><span class="params">(<span name="s">s: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Any">Any</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Is used to change the list[Any] to the correct format.</p><div class="fullcomment"><div class="comment cmt"><p>Is used to change the list[Any] to the correct format.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BaseAutocompleteField.html" class="extype" name="org.dupontmanual.forms.fields.BaseAutocompleteField">BaseAutocompleteField</a></dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#validate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="validate(value:T):Either[org.dupontmanual.forms.validators.ValidationError,T]"></a>
+      <a id="validate(Option[String]):Either[ValidationError,Option[String]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">validate</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Either">Either</span>[<a href="../validators/ValidationError.html" class="extype" name="org.dupontmanual.forms.validators.ValidationError">ValidationError</a>, <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Determines if there are ValidationErrors from the list of validators
+</p><div class="fullcomment"><div class="comment cmt"><p>Determines if there are ValidationErrors from the list of validators
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#validators" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="validators:List[org.dupontmanual.forms.validators.Validator[T]]"></a>
+      <a id="validators:List[Validator[Option[String]]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">validators</span><span class="result">: <span class="extype" name="scala.List">List</span>[<a href="../validators/Validator.html" class="extype" name="org.dupontmanual.forms.validators.Validator">Validator</a>[<span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">The list of validators that are used to make sure the user's input is correct.</p><div class="fullcomment"><div class="comment cmt"><p>The list of validators that are used to make sure the user's input is correct.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.BaseAutocompleteField#widget" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="widget:org.dupontmanual.forms.widgets.AutocompleteInput"></a>
+      <a id="widget:AutocompleteInput"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">widget</span><span class="result">: <a href="../widgets/AutocompleteInput.html" class="extype" name="org.dupontmanual.forms.widgets.AutocompleteInput">AutocompleteInput</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Sets the widget for both AutocompleteField and AutocompleteFeildOptional.</p><div class="fullcomment"><div class="comment cmt"><p>Sets the widget for both AutocompleteField and AutocompleteFeildOptional.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="BaseAutocompleteField.html" class="extype" name="org.dupontmanual.forms.fields.BaseAutocompleteField">BaseAutocompleteField</a> → <a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li><li name="org.dupontmanual.forms.fields.Field#widgetAttrs" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="widgetAttrs(widget:org.dupontmanual.forms.widgets.Widget):scala.xml.MetaData"></a>
+      <a id="widgetAttrs(Widget):MetaData"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">widgetAttrs</span><span class="params">(<span name="widget">widget: <a href="../widgets/Widget.html" class="extype" name="org.dupontmanual.forms.widgets.Widget">Widget</a></span>)</span><span class="result">: <span class="extype" name="scala.xml.MetaData">MetaData</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Determines a set of attributes that are to be set in the widget.</p><div class="fullcomment"><div class="comment cmt"><p>Determines a set of attributes that are to be set in the widget.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="org.dupontmanual.forms.fields.BaseAutocompleteField">
+              <h3>Inherited from <a href="BaseAutocompleteField.html" class="extype" name="org.dupontmanual.forms.fields.BaseAutocompleteField">BaseAutocompleteField</a>[<span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]]</h3>
+            </div><div class="parent" name="org.dupontmanual.forms.fields.Field">
+              <h3>Inherited from <a href="Field.html" class="extype" name="org.dupontmanual.forms.fields.Field">Field</a>[<span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]]</h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../../lib/template.js"></script>
+    </body>
+      </html>
