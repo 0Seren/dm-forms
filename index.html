@@ -16,14 +16,14 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1 class="header">Play-Forms</h1>
+        <h1 class="header">dm-Forms</h1>
         <p class="header">An alternative way to create forms using the Play (Scala) framework</p>
 
         <ul>
           <li class="download"><a class="buttons" href="https://github.com/dupontmanual/play-forms/zipball/master">Download ZIP</a></li>
           <li class="download"><a class="buttons" href="https://github.com/dupontmanual/play-forms/tarball/master">Download TAR</a></li>
           <li><a class="buttons github" href="https://github.com/dupontmanual/play-forms">View On GitHub</a></li>
-	  <li><a class="button" href="api/index.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Play-Forms API</a></li>
+	  <li><a class="button" href="api/index.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dm-Forms API&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
         </ul>
 
         <p class="header">This project is maintained by <a class="header name" href="https://github.com/dupontmanual">dupontmanual</a></p>
@@ -38,7 +38,7 @@ Table of Contents
 </th>
 <td>
 <ul>
-	<li><a href="#about-play-forms">About</a></li>
+	<li><a href="#about-dm-forms">About</a></li>
 	<li><a href="#basic-implementation">Basic Implementation</a></li>
 	<li><a href="#handling-user-input">Input Handling</a></li>
 	<li><a href="#dependencies">Dependencies</a></li>
@@ -49,10 +49,10 @@ Table of Contents
 </table>
 
 <h3>
-<a name="about-play-forms" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About Play-Forms
+<a name="about-dm-forms" class="anchor" href="#about-dm-forms"><span class="octicon octicon-link"></span></a>About dm-Forms
 </h3>
 <p>
-Play-Forms is a tool that was developed using Scala to help create and handle html forms in play in an easier to use way than the way that is defaultly implemented in play. To use play-forms with all of its functions you'll need to implement <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a>, <a href="http://jquery.com/">jQuery</a>, <a href="http://jdewit.github.io/bootstrap-timepicker/">bootstrap-timepicker</a>, and <a href="http://eternicode.github.io/bootstrap-datepicker/">bootstrap-datepicker</a> which can all be found and implemented with <a href="http://www.webjars.org/">webjars</a>. You do not have to use any or all of these for Play-Forms to work, but some features will not be available without them.
+dm-Forms is a tool that was developed using Scala to help create and handle html forms in play in an easier to use way than the way that is defaultly implemented in Play. To use dm-forms with all of its functions you'll need to implement <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a>, <a href="http://jquery.com/">jQuery</a>, <a href="http://jdewit.github.io/bootstrap-timepicker/">bootstrap-timepicker</a>, and <a href="http://eternicode.github.io/bootstrap-datepicker/">bootstrap-datepicker</a> which can all be found and implemented with <a href="http://www.webjars.org/">webjars</a>. You do not have to use any or all of these for dm-Forms to work, but some features will not be available without them.
 </p>
 
 <h3>
@@ -66,11 +66,11 @@ Once these are imported you can go ahead and create a new form object as follows
 }</pre></code>
 After the form object has been created, you can go ahead and create whichever fields you would like (see our <a href="api/index.html">api</a> page for more details about available fields) within the form object and add them to the list of fields in the order you wish for them to appear as follows:
 <pre><code>object BasicFormExample extends Form {
-    val NumericField = new NumericFieldOptional[Double]("Double")
-    val PasswordField = new PasswordFieldOptional("Password")
-    val TextField = new TextFieldOptional("Text")
-    val FileField = new FileFieldOptional("File")
-    val fields = List(NumericField, PasswordField, TextField, FileField)
+    val numericField = new NumericFieldOptional[Double]("Double")
+    val passwordField = new PasswordFieldOptional("Password")
+    val textField = new TextFieldOptional("Text")
+    val fileField = new FileFieldOptional("File")
+    val fields = List(numericField, passwordField, textField, fileField)
 }
 </pre></code>
 Now that we have created our form, we can go ahead and wrap it in a binding, and then send it to our views.
@@ -93,10 +93,10 @@ In order to handle a user's input you'll need to make sure that there were no er
     
     //To get values from the fields
     case goodBinding: ValidBinding => {
-      val numericFieldData = goodBinding.valueOf(BasicFormExample.NumericField)
-      val passwordFieldData = goodBinding.valueOf(BasicFormExample.PasswordField)
-      val textFieldData = goodBinding.valueOf(BasicFormExample.TextField)
-      val fileFieldData = goodBinding.valueOf(BasicFormExample.FileField)
+      val numericFieldData = goodBinding.valueOf(BasicFormExample.numericField)
+      val passwordFieldData = goodBinding.valueOf(BasicFormExample.passwordField)
+      val textFieldData = goodBinding.valueOf(BasicFormExample.textField)
+      val fileFieldData = goodBinding.valueOf(BasicFormExample.fileField)
       //Do whatever you want with the values.
       Ok(some.view())
     }
@@ -108,12 +108,12 @@ In order to handle a user's input you'll need to make sure that there were no er
 <h3>
 <a name="dependencies" class="anchor" href="#dependencies"><span class="octicon octicon-link"></span></a>Dependencies</h3>
 <p>
-As mentioned <a href="#about-play-forms">above</a>, Play-Forms does have dependencies on <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a>, <a href="http://jquery.com/">jQuery</a>, <a href="http://jdewit.github.io/bootstrap-timepicker/">bootstrap-timepicker</a>, and <a href="http://eternicode.github.io/bootstrap-datepicker/">bootstrap-datepicker</a>. Below each dependency is listed with what is dependent on it.</p>
+As mentioned <a href="#about-play-forms">above</a>, dm-Forms does have dependencies on <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a>, <a href="http://jquery.com/">jQuery</a>, <a href="http://jdewit.github.io/bootstrap-timepicker/">bootstrap-timepicker</a>, and <a href="http://eternicode.github.io/bootstrap-datepicker/">bootstrap-datepicker</a>. Below each dependency is listed with what is dependent on it.</p>
 <h4>jQuery</h4>
 <p>Bootstrap is dependent upon jQuery.</p>
 
 <h4>Bootstrap</h4>
-<p>Bootstrap-timepicker and bootstrap-datepicker are both dependent upon Bootstrap. Along with these, BaseAutocompleteField and its subclasses use Bootstrap's typeahead javascript in their widgets, field help text uses Bootstrap's tooltip javascript, and ValidationErrors use Bootstrap's Validation states base CSS to appear.</p>
+<p>Bootstrap-timepicker and bootstrap-datepicker are both dependent upon Bootstrap. Along with these, BaseAutocompleteField and its subclasses use Bootstrap's typeahead javascript in their widgets, field help text uses Bootstrap's tooltip javascript, and ValidationErrors use Bootstrap's validation states' base CSS to appear.</p>
 
 <h4>Bootstrap-timepicker</h4>
 <p>BaseTimeField, BaseDateTimeField, and their subclasses all use bootstrap-timepicker in their widgets.
@@ -127,12 +127,12 @@ As mentioned <a href="#about-play-forms">above</a>, Play-Forms does have depende
 
 <h3>
 <a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-<p>Play-Forms was created and developed by Todd O'Bryan (<a href="https://github.com/toddobryan" class="user-mention">@toddobryan</a>) and Allen Boss (<a href="https://github.com/Seren-" class="user-mention">@Seren-</a>).</p>
+<p>dm-Forms was created and developed by Todd O'Bryan (<a href="https://github.com/toddobryan" class="user-mention">@toddobryan</a>) and Allen Boss (<a href="https://github.com/Seren-" class="user-mention">@Seren-</a>).</p>
 
 <h3>
 <a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 <p>
-If you have any issues or questions over Play-Forms, please create a ticket <a href="https://github.com/dupontmanual/play-forms/issues">on our github page</a>, and we'll attempt to get back to you as soon as possible!
+If you have any issues or questions over dm-Forms, please create a ticket <a href="https://github.com/dupontmanual/play-forms/issues">on our github page</a>, and we'll attempt to get back to you as soon as possible!
 </p>
       </section>
       <footer>
