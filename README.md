@@ -1,4 +1,4 @@
-dm-forms
+dm-Forms
 ========
 
 An alternative way to create forms using the Play (Scala) framework.
