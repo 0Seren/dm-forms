@@ -1,10 +1,10 @@
-package forms
+package org.dupontmanual.forms
 
 import scala.xml.{Attribute, Null, Text}
 
 import org.scalatest.FunSuite
-import fields._
-import validators._
+import forms.fields._
+import forms.validators._
 import forms.widgets._
 
 class TestFields extends FunSuite {

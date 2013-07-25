@@ -1,9 +1,9 @@
-package forms
+package org.dupontmanual.forms
 
 import scala.xml.NodeSeq
 import scala.xml.Utility.trim
 
-import widgets._
+import forms.widgets._
 import Widget._
 
 import org.scalatest.FunSuite

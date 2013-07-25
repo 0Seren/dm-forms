@@ -1,7 +1,0 @@
-#
-GET  /test				controllers.for_forms.App.formTest()
-POST /test				controllers.for_forms.App.formTestP()
-
-GET  /webjars/*file		controllers.WebJarAssets.at(file)
-
-GET  /assets/*file 		controllers.Assets.at(path="/public", file)

@@ -1,4 +1,4 @@
-package forms
+package org.dupontmanual.forms
 
 import org.scalatest.FunSuite
 import scala.collection.immutable.ListMap
@@ -7,7 +7,7 @@ import scala.xml.{Elem, NodeSeq}
 import scala.xml.Utility.trim
 import forms.validators.ValidationError
 
-class PersonForm extends Form {
+class PersonForm extends forms.Form {
   val firstName = new TextField("firstName")
   val lastName = new TextField("lastName")
   val age = new NumericField[Int]("age")
