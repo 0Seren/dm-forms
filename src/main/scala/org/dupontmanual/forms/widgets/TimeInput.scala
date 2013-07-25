@@ -1,11 +1,8 @@
 package forms.widgets
 
 import scala.xml._
-import java.util.UUID
 import forms.validators.ValidationError
 import java.sql.Time
-
-import scalatags._
 
 /**
  * A widget that creates a time field using Bootstrap-Timepicker.

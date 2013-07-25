@@ -1,7 +1,6 @@
 package forms.widgets
 
 import scala.xml._
-import scalatags._
 import forms.validators.ValidationError
 
 /**
@@ -17,6 +16,6 @@ class AutocompleteInput(
    */
   def render(name: String, value: Seq[String], attrList: MetaData = Null) = {
     val valueAttr = if (value.isEmpty) "" else value(0)
-    input.ctype("text").name(name).cls("ac").value(valueAttr).attr(attrList.asAttrMap.toList :_*).attr(("data-provide","typeahead"), ("data-source",array), ("data-items", "12"), ("autocomplete", "off")).toXML
+    <input type="text" name={name} class="ac" value={valueAttr} data-provide="typeahead" data-source={array} data-items="12" autocomplete="off"/> % attrs % reqAttr % attrList
   }
 }

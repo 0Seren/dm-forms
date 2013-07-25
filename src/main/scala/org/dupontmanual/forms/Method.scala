@@ -3,7 +3,6 @@ package forms
 import scala.language.implicitConversions
 import scala.xml.Elem
 import play.api.mvc.{ Call => PlayCall }
-import scalatags._
 
 /** A class representing the generally recognized HTTP methods.
  *  This is used to provide compile-time checking that is not
@@ -94,12 +93,10 @@ object Call {
     Call(method, url)
   } 
   
-  /** implicit conversions from these `Call` instances to `play.api.mvc.Call`, `String`, or
-   *  `scalaTag.StringSTag`.
+  /** implicit conversions from these `Call` instances to `play.api.mvc.Call` or `String`
    */
   implicit def call2playCall(call: Call): PlayCall = PlayCall(call.method.forRequest, call.url)
   implicit def playCall2call(playCall: PlayCall): Call = Call(Method(playCall.method), playCall.url)
-  implicit def call2sTag(call: Call): STag = StringSTag(call.toString)
   implicit def call2string(call: Call): String = call.toString
 }
 
