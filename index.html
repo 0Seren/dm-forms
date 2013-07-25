@@ -23,7 +23,7 @@
           <li class="download"><a class="buttons" href="https://github.com/dupontmanual/play-forms/zipball/master">Download ZIP</a></li>
           <li class="download"><a class="buttons" href="https://github.com/dupontmanual/play-forms/tarball/master">Download TAR</a></li>
           <li><a class="buttons github" href="https://github.com/dupontmanual/play-forms">View On GitHub</a></li>
-	  <li><a class="button" href="api/index.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dm-Forms API&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+	  <li><a class="button" href="api/index.html#org.dupontmanual.forms.package" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dm-Forms API&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
         </ul>
 
         <p class="header">This project is maintained by <a class="header name" href="https://github.com/dupontmanual">dupontmanual</a></p>
@@ -66,7 +66,7 @@ Once these are imported you can go ahead and create a new form object as follows
 <br/><br/>
 <pre><code>object BasicFormExample extends Form {
 }</pre></code>
-After the form object has been created, you can go ahead and create whichever fields you would like (see our <a href="api/index.html">api</a> page for more details about available fields) within the form object and add them to the list of fields in the order you wish for them to appear as follows:
+After the form object has been created, you can go ahead and create whichever fields you would like (see our <a href="api/index.html#org.dupontmanual.forms.package">api</a> page for more details about available fields) within the form object and add them to the list of fields in the order you wish for them to appear as follows:
 <br/><br/>
 <pre><code>object BasicFormExample extends Form {
     val numericField = new NumericFieldOptional[Double]("Double")
@@ -88,7 +88,7 @@ Now in the view you need simply to call <code>@Binding.render()</code> wherever 
 <h3>
 <a name="handling-user-input" class="anchor" href="#handling-user-input"><span class="octicon octicon-link"></span></a>Handling User Input</h3>
 <p>
-In order to handle a user's input you'll need to make sure that there were no errors first, which can be done by testing the type of Binding that was returned. If there are errors you probably want to display the errors for the user to fix, and if not, you'll want to grab the values returned (see the <a href="api/index.html" target="_blank">api</a> for what values are returned for each field). Example using the basic form object created <a href="#basic-implementation">above</a>:
+In order to handle a user's input you'll need to make sure that there were no errors first, which can be done by testing the type of Binding that was returned. If there are errors you probably want to display the errors for the user to fix, and if not, you'll want to grab the values returned (see the <a href="api/index.html#org.dupontmanual.forms.package" target="_blank">api</a> for what values are returned for each field). Example using the basic form object created <a href="#basic-implementation">above</a>:
 <pre><code>def handlePostRequest() = Action { implicit req =>
   Binding(BasicFormExample, req) match {
     
