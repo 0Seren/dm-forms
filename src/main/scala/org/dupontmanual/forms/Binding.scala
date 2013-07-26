@@ -89,7 +89,7 @@ object Binding {
     * method for testing which allows you to use a `Map[String, String]` for the raw data, rather
     * than the more general `Map[String, Seq[String]]`.
     */
-  def apply(form: Form, rawData: Map[String, String], files: Seq[FilePart[_]])(implicit d: DummyImplicit): Binding = {
+  def apply(form: Form, rawData: Map[String, String], files: Seq[FilePart[_]]=Seq())(implicit d: DummyImplicit): Binding = {
     apply(form, rawData.map {
       case (name, value) => (name, List(value))
     }, files)

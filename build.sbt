@@ -24,3 +24,17 @@ libraryDependencies ++= Seq(
     "org.webjars" % "bootstrap-timepicker" % "0.2.3",
     "org.scalatest" % "scalatest_2.10" % "2.0.M5b" % "test"
 )
+
+parallelExecution in Test := false
+
+publishMavenStyle := true
+
+publishTo <<= version { (v: String) =>
+  val nexus = "https://oss.sonatype.org/"
+  if (v.trim.endsWith("SNAPSHOT"))
+    Some("snapshots" at nexus + "content/repositories/snapshots")
+  else
+    Some("releases"  at nexus + "service/local/staging/deploy/maven2")
+}
+
+publishArtifact in Test := false

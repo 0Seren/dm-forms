@@ -3,8 +3,8 @@ package org.dupontmanual.forms
 import scala.xml.NodeSeq
 import scala.xml.Utility.trim
 
-import forms.widgets._
-import Widget._
+import org.dupontmanual.forms.widgets._
+import Widget._ // for implicit conversion from Map[String, String] to attribute MetaData
 
 import org.scalatest.FunSuite
 
@@ -41,10 +41,10 @@ class TestWidgets extends FunSuite {
   
   test("CheckboxInput widget") {
     val cb = new CheckboxInput(false, List("true"))
-    assert(cb.render("box", List("true")) ===
-      <fieldset name="box">
-        <input type="checkbox" name="box" checked="checked" />true<br/>
-      </fieldset>)
+    assert(trim(cb.render("box", List("0"))) ===
+      trim(<fieldset name="box">
+        <input type="checkbox" name="box" value="0" checked="checked"/>true<br/>
+      </fieldset>))
   }
   
   test("SelectInput widget") {

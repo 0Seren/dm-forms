@@ -3,17 +3,17 @@ package org.dupontmanual.forms
 import scala.xml.{Attribute, Null, Text}
 
 import org.scalatest.FunSuite
-import forms.fields._
-import forms.validators._
-import forms.widgets._
+import org.dupontmanual.forms.fields._
+import org.dupontmanual.forms.validators._
+import org.dupontmanual.forms.widgets._
 
 class TestFields extends FunSuite {
   test("1. default TextField") {
     val f = new TextField("default")
     assert(f.clean("1") === Right("1"))
     assert(f.clean("hello") === Right("hello"))
-    assert(f.clean("") === Left(ValidationError("Expected a single value; got none or many.")))
-    assert(f.clean(Nil) === Left(ValidationError("Expected a single value; got none or many.")))
+    assert(f.clean("") === Left(ValidationError("This field is required.")))
+    assert(f.clean(Nil) === Left(ValidationError("This field is required.")))
     assert(f.maxLength === None)
     assert(f.minLength === None)
   }
@@ -57,7 +57,7 @@ class TestFields extends FunSuite {
     val f = new TextField("requiredMinLength") {
       override val minLength = Some(10)
     }
-    assert(f.clean("") === Left(ValidationError("Expected a single value; got none or many.")))
+    assert(f.clean("") === Left(ValidationError("This field is required.")))
     assert(f.clean("123456") === Left(ValidationError("This value must have at least 10 characters. (It has 6.)")))
     assert(f.clean("1234567890") === Right("1234567890"))
     assert(f.clean("1234567890a") === Right("1234567890a"))
@@ -78,8 +78,8 @@ class TestFields extends FunSuite {
   
   test("1. NumericField[Int]") {
     val f = new NumericField[Int]("int")
-    assert(f.clean("") === Left(ValidationError("Expected a single value; got none or many.")))
-    assert(f.clean(Nil) === Left(ValidationError("Expected a single value; got none or many.")))
+    assert(f.clean("") === Left(ValidationError("This field is required.")))
+    assert(f.clean(Seq("2", "3")) === Left(ValidationError("Expected a single value; got none or many.")))
     assert(f.clean("1") === Right(1))
     assert(f.clean("23") === Right(23))
     assert(f.clean("a") === Left(ValidationError("This value must be a positive or negative whole number.")))
@@ -112,8 +112,8 @@ class TestFields extends FunSuite {
     val f = new NumericField[Int]("requiredIntMaxValue") {
       override val maxValue = Some(23)
     }
-    assert(f.clean("") === Left(ValidationError("Expected a single value; got none or many.")))
-    assert(f.clean(Nil) === Left(ValidationError("Expected a single value; got none or many.")))
+    assert(f.clean("") === Left(ValidationError("This field is required.")))
+    assert(f.clean(Nil) === Left(ValidationError("This field is required.")))
     assert(f.clean("1") === Right(1))
     assert(f.clean("23") === Right(23))
     assert(f.clean("24") === Left(ValidationError("This value must be at most 23.")))
@@ -131,8 +131,8 @@ class TestFields extends FunSuite {
     val f = new NumericField[Int]("requiredIntMinValue") { 
       override val minValue = Some(3)
     }
-    assert(f.clean("") === Left(ValidationError("Expected a single value; got none or many.")))
-    assert(f.clean(Nil) === Left(ValidationError("Expected a single value; got none or many.")))
+    assert(f.clean("") === Left(ValidationError("This field is required.")))
+    assert(f.clean(Nil) === Left(ValidationError("This field is required.")))
     assert(f.clean("2") === Left(ValidationError("This value must be at least 3.")))
     assert(f.clean("23") === Right(23))
     assert(f.clean("3") === Right(3))
@@ -151,8 +151,8 @@ class TestFields extends FunSuite {
       override val minValue = Some(-3)
       override val maxValue=Some(3)
     }
-    assert(f.clean("") === Left(ValidationError("Expected a single value; got none or many.")))
-    assert(f.clean(Nil) === Left(ValidationError("Expected a single value; got none or many.")))
+    assert(f.clean("") === Left(ValidationError("This field is required.")))
+    assert(f.clean(Nil) === Left(ValidationError("This field is required.")))
     assert(f.clean("-4") === Left(ValidationError("This value must be at least -3.")))
     assert(f.clean("-3") === Right(-3))
     assert(f.clean("0") === Right(0))
@@ -193,8 +193,8 @@ class TestFields extends FunSuite {
   
   test("1. required NumericField[Double]") {
     val f = new NumericField[Double]("double")
-    assert(f.clean("") === Left(ValidationError("Expected a single value; got none or many.")))
-    assert(f.clean(Nil) === Left(ValidationError("Expected a single value; got none or many.")))
+    assert(f.clean("") === Left(ValidationError("This field is required.")))
+    assert(f.clean(Nil) === Left(ValidationError("This field is required.")))
     assert(f.clean("-4") === Right(-4.0))
     assert(f.clean("-3") === Right(-3.0))
     assert(f.clean("0") === Right(0.0))
@@ -203,7 +203,7 @@ class TestFields extends FunSuite {
     assert(f.clean("-1.5 ") === Right(-1.5))
     assert(f.clean(" 2.5") === Right(2.5))
     assert(f.clean(" -2.5 ") === Right(-2.5))
-    assert(f.clean("    ") === Left(ValidationError("Expected a single value; got none or many.")))
+    assert(f.clean("    ") === Left(ValidationError("This field is required.")))
     assert(f.clean("4a") === Left(ValidationError("This value must be a number.")))
     assert(f.maxValue === None)
     assert(f.minValue === None)
@@ -232,8 +232,8 @@ class TestFields extends FunSuite {
       override val minValue = Some(-3.5)
       override val maxValue = Some(2.1)
     }
-    assert(f.clean("") === Left(ValidationError("Expected a single value; got none or many.")))
-    assert(f.clean(Nil) === Left(ValidationError("Expected a single value; got none or many.")))
+    assert(f.clean("") === Left(ValidationError("This field is required.")))
+    assert(f.clean(Nil) === Left(ValidationError("This field is required.")))
     assert(f.clean("-4") === Left(ValidationError("This value must be at least -3.5.")))
     assert(f.clean("-3") === Right(-3.0))
     assert(f.clean("0") === Right(0.0))
@@ -242,7 +242,7 @@ class TestFields extends FunSuite {
     assert(f.clean("-1.5 ") === Right(-1.5))
     assert(f.clean(" 2.1") === Right(2.1))
     assert(f.clean(" -3.5 ") === Right(-3.5))
-    assert(f.clean("    ") === Left(ValidationError("Expected a single value; got none or many.")))
+    assert(f.clean("    ") === Left(ValidationError("This field is required.")))
     assert(f.clean("4a") === Left(ValidationError("This value must be a number.")))
     assert(f.maxValue === Some(2.1))
     assert(f.minValue === Some(-3.5))   
@@ -275,8 +275,8 @@ class TestFields extends FunSuite {
     // TODO: are the commented-out tests right or wrong? We're using javax.mail
     //       to validate, so I'm kinda hoping it's right
     val f = new EmailField("default")
-    assert(f.clean("") === Left(ValidationError("Expected a single value; got none or many.")))
-    assert(f.clean(Nil) === Left(ValidationError("Expected a single value; got none or many.")))
+    assert(f.clean("") === Left(ValidationError("This field is required.")))
+    assert(f.clean(Nil) === Left(ValidationError("This field is required.")))
     assert(f.clean("person@example.com") === Right("person@example.com"))
     assert(f.clean("foo") === Left(ValidationError("Enter a valid email address.")))
     assert(f.clean("foo@") === Left(ValidationError("Enter a valid email address.")))
@@ -316,36 +316,7 @@ class TestFields extends FunSuite {
     assert(f.clean("alf@foo.com") === Right("alf@foo.com"))  
     assert(f.clean("alf123456788@foo.com") === Left(ValidationError("This value must have no more than 15 characters. (It has 20.)")))
   }
-  
-  //BooleanField******************************************************************
-  /*
-  test("1. booleanfield") {
-    val f = new BooleanField("default")
-    assert(f.clean("") === Left(ValidationError(List("This field is required"))))
-    assert(f.clean(Nil) === Left(ValidationError(List("This field is requried"))))
-    assert(f.clean(true) === Right(true))
-    assert(f.clean(false) === Left(ValidationError(List("This field is requried"))))
-    assert(f.clean("1") === Right(true))
-    assert(f.clean("0") === Left(ValidationError(List("This field is requried"))))
-    assert(f.clean("I rock") === Right(true))
-    assert(f.clean("True") === Right(true))
-    assert(f.clean("False") === Left(ValidationError(List("This field is requried"))))
-  }
-  
-  test("2. booleanfield") {
-    val f = new BooleanFieldOptional("optional")
-    assert(f.clean("") === Right(Some(false)))
-    assert(f.clean(Nil) === Right(Some(false)))
-    assert(f.clean(true) === Right(Some(true)))
-    assert(f.clean(false) === Right(Some(false)))
-    assert(f.clean("1") === Right(Some(true)))
-    assert(f.clean("0") === Right(Some(false)))
-    assert(f.clean("Andrew Hamm rocks") === Right(Some(true)))
-    assert(f.clean("False") === Right(Some(false)))
-    assert(f.clean("false") === Right(Some(false)))
-    assert(f.clean("FaLsE") === Right(Some(false)))
-  }*/
-  
+    
   test("1. ChoiceField") {
     val f = new ChoiceField[Int]("grade", List("Freshman" -> 9, "Sophomore" -> 10, "Junior" -> 11, "Senior" -> 12))
     assert(f.clean("0") === Right(9))

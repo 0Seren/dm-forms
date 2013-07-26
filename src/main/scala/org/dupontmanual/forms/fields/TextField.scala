@@ -2,7 +2,6 @@ package org.dupontmanual.forms.fields
 
 import scala.xml.{Attribute, MetaData, Null, Text}
 
-
 import org.dupontmanual.forms.validators._
 import org.dupontmanual.forms.widgets._
 
