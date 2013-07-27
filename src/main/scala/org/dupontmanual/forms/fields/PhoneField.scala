@@ -1,5 +1,7 @@
 package org.dupontmanual.forms.fields
 
+import scala.reflect.runtime.universe.TypeTag
+
 import org.dupontmanual.forms.validators.ValidationError
 import org.dupontmanual.forms.widgets.PhoneInput
 import org.dupontmanual.forms._
@@ -7,7 +9,7 @@ import org.dupontmanual.forms._
 /**
  * Creates methods common to both PhoneField and PhoneFieldOptional.
  */
-abstract class BasePhoneField[T](name: String)(implicit man: Manifest[T]) extends Field[T](name) {
+abstract class BasePhoneField[T](name: String)(implicit tag: TypeTag[T]) extends Field[T](name) {
 
   /**
    * Sets the widget for PhoneField and PhoneFieldOptional.

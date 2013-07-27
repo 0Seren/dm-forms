@@ -6,9 +6,8 @@ import scala.xml._
  * A widget that creates a list of radio buttons.
  */
 class RadioInput(
-    required: Boolean,
     val options: List[String],
-    attrs: MetaData = Null) extends Widget(required, attrs) {
+    attrs: MetaData = Null) extends Widget(true, attrs) {
 
   /**
    * Renders the radio buttons using xml.

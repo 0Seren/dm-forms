@@ -320,8 +320,10 @@ class TestFields extends FunSuite {
   test("1. ChoiceField") {
     val f = new ChoiceField[Int]("grade", List("Freshman" -> 9, "Sophomore" -> 10, "Junior" -> 11, "Senior" -> 12))
     assert(f.clean("0") === Right(9))
-    assert(f.clean("foo") === Left(ValidationError("Illegal value submitted.")))
-    assert(f.clean("-1") === Left(ValidationError("This field is required. Please choose a value.")))
+    assert(f.clean("foo") === Left(ValidationError("An unexpected value was submitted.")))
+    assert(f.clean("-1") === Left(ValidationError("An unexpected value was submitted.")))
+    assert(f.clean(Nil) === Left(ValidationError("This field is required.")))
+    assert(f.clean(List("0", "2")) === Left(ValidationError("Expected a single value, but got more than one.")))
   }
   
 }

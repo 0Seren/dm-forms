@@ -25,11 +25,11 @@ class TestForms extends FunSuite {
     assert(vb.valueOf(f.lastName) === "Lennon")
     assert(vb.valueOf(f.age) === 72)
     assert(f.firstName.asWidget(b) === 
-      <input type="text" name="firstName" value="John" id="id_firstName" required="required" style="height:30px" />)
+      <input type="text" name="firstName" value="John" id="id_firstName" required="required" />)
     assert(f.lastName.asWidget(b) === 
-      <input type="text" name="lastName" value="Lennon" id="id_lastName" required="required" style="height:30px" />)
+      <input type="text" name="lastName" value="Lennon" id="id_lastName" required="required" />)
     assert(f.age.asWidget(b) === 
-      <input type="number" name="age" value="72" id="id_age" required="required" style="height:30px" />)
+      <input type="number" name="age" value="72" id="id_age" required="required" />)
     assert(trim(<div>{ b.render() }</div>) === trim(<div>{ PersonForm.bound }</div>))
   }
   
@@ -64,19 +64,19 @@ object PersonForm {
   <div class="control-group ">
     <label class="control-label First Name" for="id_firstName">First Name</label>
     <div class="controls">  	
-      <input value="John" id="id_firstName" style="height:30px" required="required" type="text" name="firstName"/><br/>
+      <input value="John" id="id_firstName" required="required" type="text" name="firstName"/><br/>
     </div>  
   </div>
   <div class="control-group ">
     <label class="control-label Last Name" for="id_lastName">Last Name</label>
     <div class="controls">  	
-      <input value="Lennon" id="id_lastName" style="height:30px" required="required" type="text" name="lastName"/><br/>
+      <input value="Lennon" id="id_lastName" required="required" type="text" name="lastName"/><br/>
     </div>  
   </div>
   <div class="control-group ">
     <label class="control-label Age" for="id_age">Age</label>
     <div class="controls">  	
-      <input value="72" id="id_age" style="height:30px" required="required" type="number" name="age"/><br/>
+      <input value="72" id="id_age" required="required" type="number" name="age"/><br/>
     </div>  
   </div>
   <div class="form-actions">
@@ -96,21 +96,21 @@ object PersonForm {
   <div class="control-group error">
     <label class="control-label First Name" for="id_firstName">First Name</label>
     <div class="controls">
-      <input id="id_firstName" style="height:30px" required="required" type="text" name="firstName"/>
+      <input id="id_firstName" required="required" type="text" name="firstName"/>
       <span class="help-inline"><i class="icon-warning-sign"></i>&nbsp;This field is required.</span><br/>
     </div>  
   </div>
   <div class="control-group error">
     <label class="control-label Last Name" for="id_lastName">Last Name</label>
     <div class="controls">
-      <input id="id_lastName" style="height:30px" required="required" type="text" name="lastName"/>
+      <input id="id_lastName" required="required" type="text" name="lastName"/>
       <span class="help-inline"><i class="icon-warning-sign"></i>&nbsp;This field is required.</span><br/>
     </div>  
   </div>
   <div class="control-group error">
     <label class="control-label Age" for="id_age">Age</label>
     <div class="controls">
-      <input id="id_age" style="height:30px" required="required" type="number" name="age"/>
+      <input id="id_age" required="required" type="number" name="age"/>
       <span class="help-inline"><i class="icon-warning-sign"></i>&nbsp;This field is required.</span><br/>
     </div>  
   </div>

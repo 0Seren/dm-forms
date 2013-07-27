@@ -8,6 +8,7 @@ import scala.xml._
 class CheckboxInput(
     required: Boolean,
     val options: List[String],
+    allowMultiple: Boolean = false,
     attrs: MetaData = Null) extends Widget(required, attrs) {
 
   /**
