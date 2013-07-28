@@ -21,11 +21,6 @@ abstract class BaseTextField[T](name: String)(implicit man: Manifest[T]) extends
   val maxLength: Option[Int] = None
   
   /**
-   * Turns the autocomplete attribute on or off.
-   */
-  val autocomplete: Option[Boolean] = None
-  
-  /**
    * Creates new widgetAttrs for the widget.
    */
   override def widgetAttrs(widget: Widget): MetaData = {

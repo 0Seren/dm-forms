@@ -6,12 +6,11 @@ import org.dupontmanual.forms.validators._
 import org.dupontmanual.forms.Form
 import org.dupontmanual.forms.Binding
 import play.api.templates.Html
-import scala.reflect.runtime.universe._
 
 /**
  * A template for fields that are to be included in a form.
  */
-abstract class Field[T](val name: String)(implicit tag: TypeTag[T]) {
+abstract class Field[T](val name: String)(implicit tag: Manifest[T]) {
   
   /**
    * The list of validators that are used to make sure the user's input is correct.
@@ -23,7 +22,7 @@ abstract class Field[T](val name: String)(implicit tag: TypeTag[T]) {
    * is required or not. Is default set to false if the return type
    * is an Option and true if not.
    */
-  def required: Boolean = !(typeOf[T] <:< typeOf[Option[_]])
+  def required: Boolean = !(manifest[T] <:< manifest[Option[_]])
   
   /**
    * Sets the widget that is used for the Field.

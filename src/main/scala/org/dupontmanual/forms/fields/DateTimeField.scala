@@ -1,7 +1,5 @@
 package org.dupontmanual.forms.fields
 
-import scala.reflect.runtime.universe.TypeTag
-
 import org.joda.time.format.DateTimeFormatter
 import org.joda.time.LocalDateTime
 
@@ -14,7 +12,7 @@ import org.dupontmanual.forms.widgets.DateTimeInput
 abstract class BaseDateTimeField[T](
     name: String, 
     dateParser: DateTimeFormatter = BaseDateField.usFormat, 
-    timeParser: DateTimeFormatter = BaseTimeField.defaultParser)(implicit tag: TypeTag[T]) extends Field[T](name) {
+    timeParser: DateTimeFormatter = BaseTimeField.defaultParser)(implicit man: Manifest[T]) extends Field[T](name) {
   
   /**
    * Sets the widget for DateTimeField and DateTimeFieldOptional.

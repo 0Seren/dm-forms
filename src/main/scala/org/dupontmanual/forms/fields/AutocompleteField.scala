@@ -1,7 +1,5 @@
 package org.dupontmanual.forms.fields
 
-import scala.reflect.runtime.universe.TypeTag
-
 import play.api.libs.json.{ Json, JsArray }
 
 import org.dupontmanual.forms.validators.ValidationError
@@ -11,7 +9,7 @@ import org.dupontmanual.forms._
 /**
  * Sets the widget and a helper method for AutocompleteFied and AutocompleteFieldOptional.
  */
-abstract class BaseAutocompleteField[T](name: String, list: List[String])(implicit tag: TypeTag[T]) extends Field[T](name) {
+abstract class BaseAutocompleteField[T](name: String, list: List[String])(implicit man: Manifest[T]) extends Field[T](name) {
   
   /**
    * Sets the widget for both AutocompleteField and AutocompleteFeildOptional.

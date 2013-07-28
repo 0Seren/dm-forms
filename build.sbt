@@ -1,4 +1,4 @@
-name := "DM Forms"
+name := "dM Forms"
 
 normalizedName := "dm-forms"
 
@@ -8,7 +8,7 @@ organization := "org.dupontmanual"
 
 organizationName := "duPont Manual High School"
 
-version := "0.1"
+version := "0.1-SNAPSHOT"
 
 scalaVersion := "2.10.2"
 
@@ -22,10 +22,9 @@ libraryDependencies ++= Seq(
     "org.webjars" % "jquery-ui" % "1.10.2-1",
     "org.webjars" % "bootstrap-datepicker" % "1.0.1",
     "org.webjars" % "bootstrap-timepicker" % "0.2.3",
+    "org.webjars" % "jquery-maskedinput" % "1.3.1",
     "org.scalatest" % "scalatest_2.10" % "2.0.M5b" % "test"
 )
-
-parallelExecution in Test := false
 
 publishMavenStyle := true
 
@@ -38,3 +37,37 @@ publishTo <<= version { (v: String) =>
 }
 
 publishArtifact in Test := false
+
+credentials += Credentials(Path.userHome / ".ssh" / ".credentials")
+
+pomExtra := (
+  <url>http://dupontmanual.github.io/dm-forms</url>
+  <licenses>
+    <license>
+      <name>Apache 2</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+    </license>
+  </licenses>
+  <scm>
+    <url>git://github.com/dupontmanual/dm-forms.git</url>
+    <connection>scm:git://github.com/dupontmanual/dm-forms.git</connection>
+  </scm>
+  <organization>
+    <name>duPont Manual High School Computer Science Department</name>
+    <url>http://dupontmanual.github.io/</url>
+  </organization>
+  <developers>
+    <developer>
+      <name>Allen Boss</name>
+      <roles>
+        <role>Student, Class of 2013</role>
+      </roles>
+    </developer>
+    <developer>
+      <name>Todd O'Bryan</name>
+      <roles>
+        <role>Teacher</role>
+      </roles>
+    </developer>
+  </developers>
+)

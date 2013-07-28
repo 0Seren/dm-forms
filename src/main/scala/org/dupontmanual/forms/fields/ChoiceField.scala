@@ -1,6 +1,5 @@
 package org.dupontmanual.forms.fields
 
-import scala.reflect.runtime.universe.TypeTag
 import org.dupontmanual.forms.validators.ValidationError
 import org.dupontmanual.forms.widgets.SelectInput
 import org.dupontmanual.forms.widgets.Widget
@@ -15,7 +14,7 @@ import org.dupontmanual.forms.widgets.Widget
  *  `String`s describing them are different. `List[T]` or `ValidationError`
  *  will be returned. 
   */
-abstract class BaseChoiceField[T, U](name: String, choices: List[(String, T)], allowMultiple: Boolean = false)(implicit tag: TypeTag[U])
+abstract class BaseChoiceField[T, U](name: String, choices: List[(String, T)], allowMultiple: Boolean = false)(implicit man: Manifest[U])
     extends Field[U](name) {
   /** Returns the correct indexes for the selected values.
     */
@@ -52,7 +51,7 @@ abstract class BaseChoiceField[T, U](name: String, choices: List[(String, T)], a
   * set of checkboxes, and choices: List[(String, T)] determines what is displayed by each checkbox (choices._1)
   * and what should be returned should that checkbox be checked (choices._2).
   */
-class ChoiceField[T](name: String, choices: List[(String, T)], allowMultiple: Boolean = false)(implicit tag: TypeTag[T]) 
+class ChoiceField[T](name: String, choices: List[(String, T)], allowMultiple: Boolean = false)(implicit man: Manifest[T]) 
     extends BaseChoiceField[T, T](name, choices) {
   override def asStringSeq(value: Option[T]): Seq[String] = {
     super.toStringSeq(value.toList)
@@ -67,7 +66,7 @@ class ChoiceField[T](name: String, choices: List[(String, T)], allowMultiple: Bo
   * and choices: List[(String, T)] determines what is displayed by each checkbox (choices._1)
   * and what should be returned should that checkbox be checked (choices._2).
   */
-class ChoiceFieldOptional[T](name: String, choices: List[(String, T)])(implicit tag: TypeTag[T]) 
+class ChoiceFieldOptional[T](name: String, choices: List[(String, T)])(implicit man: Manifest[T]) 
     extends BaseChoiceField[T, Option[T]](name, choices) {
   override def asStringSeq(value: Option[Option[T]]): Seq[String] = value match {
     case Some(Some(t)) => super.toStringSeq(List(t))
@@ -79,14 +78,14 @@ class ChoiceFieldOptional[T](name: String, choices: List[(String, T)])(implicit 
   }
 }
 
-class ChoiceFieldMultiple[T](name: String, choices: List[(String, T)])(implicit tag: TypeTag[T])
+class ChoiceFieldMultiple[T](name: String, choices: List[(String, T)])(implicit man: Manifest[T])
     extends BaseChoiceField[T, List[T]](name, choices, allowMultiple = true) {
   override def asStringSeq(value: Option[List[T]]): Seq[String] = super.toStringSeq(value.getOrElse(Nil))
   
   override def asValue(s: Seq[String]): Either[ValidationError, List[T]] = super.toValue(s)
 }
 
-class ChoiceFieldMultipleOptional[T](name: String, choices: List[(String, T)])(implicit tag: TypeTag[T])
+class ChoiceFieldMultipleOptional[T](name: String, choices: List[(String, T)])(implicit man: Manifest[T])
     extends BaseChoiceField[T, List[T]](name, choices, allowMultiple = true) {
   override def required = false
   
