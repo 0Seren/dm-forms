@@ -8,23 +8,30 @@ import org.dupontmanual.forms.validators.ValidationError
  */
 class PhoneInput(
   required: Boolean,
-  attrs: MetaData = Null) extends Widget(required, attrs) {
+  attrs: MetaData = Null,
+  useMaskedInputs: Boolean = false,
+  placeHolder: Char = '_',
+  phoneFormat: String = "###-###-####") extends Widget(required, attrs) {
   
   /**
    * Renders the phone field on the page using xml.
    */
   def render(name: String, value: Seq[String], attrList: MetaData = Null) = {
-    <input type="text" name={ name } value={if(value.isEmpty) "" else value(0) } placeholder="###-###-####" class="phone"></input> % attrs % reqAttr % attrList
+    <input type="text" name={ name } value={if(value.isEmpty) "" else value(0) } placeholder={phoneFormat} class="phone"></input> % attrs % reqAttr % attrList
   }
   
   /**
    * Creates the masked input scripts for phone field.
    */
-  override def scripts: NodeSeq =
-    <script type="text/javascript">
-	jQuery(function($){{
-		$('.phone').mask('999-999-9999',{{placeholder:'_'}});
-  	}});
-  </script>
+  override def scripts: NodeSeq ={
+    if(useMaskedInputs){
+     val format = phoneFormat.map((c: Char) => if(c == '#') '9' else c)
+     <script type="text/javascript">
+     jQuery(function($){{
+    	$('.phone').mask('{format}', {{placeholder:'{placeHolder}'}});
+     }}
+     </script>
+    } else NodeSeq.Empty
+  }
 
 }
