@@ -26,10 +26,11 @@ class ValidationError(val messages: List[NodeSeq]) extends Seq[NodeSeq] {
   /**
    * Renders each individual message using Bootstrap.
    */
-  def render: NodeSeq = messages match {
+  def render(isFormError: Boolean = false): NodeSeq = messages match {
     case Nil => NodeSeq.Empty
     case _ => messages.flatMap(msg => 
-    <span class="help-inline"><i class="icon-warning-sign"></i>&nbsp;{msg}</span>)
+    if(isFormError) <div class="alert alert-error">{msg}</div>
+    else <span class="help-inline"><i class="icon-warning-sign"></i>&nbsp;{msg}</span>)
       
     /*{
       val uuid=java.util.UUID.randomUUID().toString()

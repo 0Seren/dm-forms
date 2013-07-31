@@ -71,7 +71,7 @@ abstract class Field[T](val name: String)(implicit tag: Manifest[T]) {
    * that occur with the field.
    */
   def render(bound: Binding): NodeSeq = {
-    val errors = bound.fieldErrors.get(name).map(_.render).getOrElse(NodeSeq.Empty)
+    val errors = bound.fieldErrors.getOrElse(name, new ValidationError(Nil)).render()
     <div class={"control-group " + {if(errors.isEmpty) "" else "error"}}>
       { labelElem(bound.form) }
       <div class="controls">
