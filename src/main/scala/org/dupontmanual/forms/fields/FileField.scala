@@ -46,7 +46,7 @@ abstract class BaseFileField[T](name: String)(implicit man: Manifest[T]) extends
  * Creates a new FileField.
  */
 class FileField(name: String) extends BaseFileField[Seq[FilePart[_]]](name){
-    
+    override def required=true
     /**
      * Returns a Seq[FilePart[_]] if a valid file is submitted and a ValidationError
      * if an invalid file or no file is submitted.
@@ -61,7 +61,7 @@ class FileField(name: String) extends BaseFileField[Seq[FilePart[_]]](name){
  * Creates an optional FileField.
  */
 class FileFieldOptional(name: String) extends BaseFileField[Option[Seq[FilePart[_]]]](name) {
-  
+  override def required=false
   /**
    * Returns an Option[Seq[FilePart[_]]] if no file or a valid file is submitted. Returns
    * a ValidationError if an invalid file is submitted.
@@ -73,4 +73,6 @@ class FileFieldOptional(name: String) extends BaseFileField[Option[Seq[FilePart[
     else if(maybe.right.get.isEmpty) Right(None)
     else Right(Some(maybe.right.get))
   }
+  
+  
 }
