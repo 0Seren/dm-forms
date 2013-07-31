@@ -21,11 +21,11 @@ import org.dupontmanual.forms.fields.BaseFileField
   *
   * def handlePostRequest() = Action { implicit req =>
   * Binding(FormObject, req) match {
-  *   case bindingWithErrors: InvalidBinding => Ok(some.view(bindingWithErrors)) // use same template
-  *   case goodBinding: ValidBinding => {
-  *     val datum = goodBinding.valueOf(FormObject.field)
-  *     ...
-  *   }
+  *  case bindingWithErrors: InvalidBinding => Ok(some.view(bindingWithErrors)) // use same template
+  *  case goodBinding: ValidBinding => {
+  *    val datum = goodBinding.valueOf(FormObject.field)
+  *    ...
+  *  }
   * }
   * }
   * }}}
@@ -89,7 +89,7 @@ object Binding {
     * method for testing which allows you to use a `Map[String, String]` for the raw data, rather
     * than the more general `Map[String, Seq[String]]`.
     */
-  def apply(form: Form, rawData: Map[String, String], files: Seq[FilePart[_]]=Seq())(implicit d: DummyImplicit): Binding = {
+  def apply(form: Form, rawData: Map[String, String], files: Seq[FilePart[_]] = Seq())(implicit d: DummyImplicit): Binding = {
     apply(form, rawData.map {
       case (name, value) => (name, List(value))
     }, files)
@@ -129,7 +129,7 @@ class InitialBinding(form: Form) extends Binding(form, Map(), Nil) {
   * corrected.
   */
 class InvalidBinding(form: Form, rawData: Map[String, Seq[String]], files: Seq[FilePart[_]], _fieldErrors: Map[String, ValidationError], _formErrors: ValidationError)
-  extends Binding(form, rawData, files) {
+    extends Binding(form, rawData, files) {
   override def formErrors = _formErrors
   override def fieldErrors = _fieldErrors
 }
@@ -139,7 +139,7 @@ class InvalidBinding(form: Form, rawData: Map[String, Seq[String]], files: Seq[F
   * the `valueOf` methods.
   */
 class ValidBinding(form: Form, rawData: Map[String, Seq[String]], files: Seq[FilePart[_]], val cleanedData: Map[String, Any])
-  extends Binding(form, rawData, files) {
+    extends Binding(form, rawData, files) {
   override def hasErrors: Boolean = false
 
   def valueOf[T](field: Field[T]): T = {
