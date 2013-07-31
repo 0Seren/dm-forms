@@ -30,9 +30,8 @@ abstract class BaseChoiceField[T, U](name: String, choices: List[(String, T)], a
   /** Given a list of indices (as `String`s), returns a list of the corresponding `T`s.  */
   def toValue(s: Seq[String]): Either[ValidationError, List[T]] = {
     try {
-      val listOfIndices = s.map(_.toInt) 
-      if (listOfIndices.contains(-1)) Left(ValidationError(errorMessages("unexpected")))
-      else if (this.required && listOfIndices.isEmpty) Left(ValidationError(errorMessages("required")))
+      val listOfIndices = s.map(_.toInt).filter(_ != -1)
+      if (this.required && listOfIndices.isEmpty) Left(ValidationError(errorMessages("required")))
       else if (listOfIndices.length > 1 && !allowMultiple) Left(ValidationError(errorMessages("multiple")))
       else {
         Right(listOfIndices.map(index => choices(index)._2).toList) //returns the objects

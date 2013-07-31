@@ -8,7 +8,7 @@ import org.dupontmanual.forms.validators.ValidationError
   * and what should be returned should that checkbox be checked (choices._2).
   */
 class CheckboxField[T](name: String, choices: List[(String, T)])(implicit man: Manifest[T]) 
-    extends ChoiceField[T](name, choices) {
+    extends ChoiceFieldMultiple[T](name, choices) {
   override def required = true
   override def widget: Widget = new CheckboxInput(required, choices.map(_._1))
 }
@@ -18,7 +18,7 @@ class CheckboxField[T](name: String, choices: List[(String, T)])(implicit man: M
   * and what should be returned should that checkbox be checked (choices._2).
   */
 class CheckboxFieldOptional[T](name: String, choices: List[(String, T)])(implicit man: Manifest[T]) 
-    extends ChoiceFieldOptional[T](name, choices) {
+    extends ChoiceFieldMultipleOptional[T](name, choices) {
   override def required = false
   override def widget: Widget = new CheckboxInput(required, choices.map(_._1))
 }

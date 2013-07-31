@@ -29,7 +29,7 @@ class PhoneInput(
      <script type="text/javascript">
      jQuery(function($){{
     	$('.phone').mask('{format}', {{placeholder:'{placeHolder}'}});
-     }}
+     }});
      </script>
     } else NodeSeq.Empty
   }

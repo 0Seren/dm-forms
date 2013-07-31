@@ -326,4 +326,9 @@ class TestFields extends FunSuite {
     assert(f.clean(List("0", "2")) === Left(ValidationError("Expected a single value, but got more than one.")))
   }
   
+  test("1. CheckboxOptionalField") {
+    val f = new CheckboxFieldOptional("checkboxes", List("car" -> 11, "var" -> 12, "truck" -> 13))
+    assert(f.asValue(Nil) === Right(List()))
+  }
+  
 }

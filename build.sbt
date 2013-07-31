@@ -12,6 +12,8 @@ version := "0.1-SNAPSHOT"
 
 scalaVersion := "2.10.2"
 
+scalacOptions ++= Seq("-deprecation", "-feature")
+
 resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
 
 libraryDependencies ++= Seq(
