@@ -9,7 +9,8 @@ import org.dupontmanual.forms.validators.ValidationError
   */
 class CheckboxField[T](name: String, choices: List[(String, T)])(implicit man: Manifest[T]) 
     extends ChoiceField[T](name, choices) {
-  override def widget: Widget = new CheckboxInput(true, choices.map(_._1))
+  override def required = true
+  override def widget: Widget = new CheckboxInput(required, choices.map(_._1))
 }
 
 /** An optional set of checkboxes. name: String is the label for the set of checkboxes,
@@ -18,15 +19,6 @@ class CheckboxField[T](name: String, choices: List[(String, T)])(implicit man: M
   */
 class CheckboxFieldOptional[T](name: String, choices: List[(String, T)])(implicit man: Manifest[T]) 
     extends ChoiceFieldOptional[T](name, choices) {
-  override def widget: Widget = new CheckboxInput(false, choices.map(_._1))
-}
-
-class CheckboxFieldMultiple[T](name: String, choices: List[(String, T)])(implicit man: Manifest[T])
-    extends ChoiceFieldMultiple[T](name, choices) {
-  override def widget: Widget = new CheckboxInput(true, choices.map(_._1), true)
-}
-
-class CheckboxFieldMultipleOptional[T](name: String, choices: List[(String, T)])(implicit man: Manifest[T])
-    extends ChoiceFieldMultipleOptional[T](name, choices) {
-  override def widget: Widget = new CheckboxInput(false, choices.map(_._1), true)
+  override def required = false
+  override def widget: Widget = new CheckboxInput(required, choices.map(_._1))
 }

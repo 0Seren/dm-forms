@@ -53,6 +53,7 @@ abstract class BaseChoiceField[T, U](name: String, choices: List[(String, T)], a
   */
 class ChoiceField[T](name: String, choices: List[(String, T)], allowMultiple: Boolean = false)(implicit man: Manifest[T]) 
     extends BaseChoiceField[T, T](name, choices) {
+  override def required = true
   override def asStringSeq(value: Option[T]): Seq[String] = {
     super.toStringSeq(value.toList)
   }
@@ -68,6 +69,7 @@ class ChoiceField[T](name: String, choices: List[(String, T)], allowMultiple: Bo
   */
 class ChoiceFieldOptional[T](name: String, choices: List[(String, T)])(implicit man: Manifest[T]) 
     extends BaseChoiceField[T, Option[T]](name, choices) {
+  override def required = false
   override def asStringSeq(value: Option[Option[T]]): Seq[String] = value match {
     case Some(Some(t)) => super.toStringSeq(List(t))
     case _ => super.toStringSeq(Nil)
@@ -81,7 +83,7 @@ class ChoiceFieldOptional[T](name: String, choices: List[(String, T)])(implicit 
 class ChoiceFieldMultiple[T](name: String, choices: List[(String, T)])(implicit man: Manifest[T])
     extends BaseChoiceField[T, List[T]](name, choices, allowMultiple = true) {
   override def asStringSeq(value: Option[List[T]]): Seq[String] = super.toStringSeq(value.getOrElse(Nil))
-  
+  override def required = true
   override def asValue(s: Seq[String]): Either[ValidationError, List[T]] = super.toValue(s)
 }
 
