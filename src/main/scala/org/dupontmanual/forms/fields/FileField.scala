@@ -1,9 +1,9 @@
 package org.dupontmanual.forms.fields
 
-import org.dupontmanual.forms.widgets._
-import org.dupontmanual.forms.validators.ValidationError
 import play.api.mvc.MultipartFormData.FilePart
 
+import org.dupontmanual.forms.widgets._
+import org.dupontmanual.forms.validators.ValidationError
 
 /**
  * Sets methods common o FileField and FileFieldOptional.

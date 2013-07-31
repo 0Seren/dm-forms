@@ -1,6 +1,5 @@
 package org.dupontmanual.forms.fields
 
-import scala.reflect.runtime.universe._
 import scala.xml.Text
 
 import org.dupontmanual.forms.widgets._
@@ -32,10 +31,7 @@ class NumericField[T](name: String)(implicit n: Numeric[T], man: Manifest[T])
   /**
    * Sets the widget for the NumericField.
    */
-  override def widget = {
-    if(typeOf[T] == typeOf[Int] || typeOf[T] == typeOf[Long] || typeOf[T] == typeOf[Byte] || typeOf[T] == typeOf[Short]) new TextInput(required, _inputType = "number")
-    else new TextInput(required, _inputType = "number", _step=true)
-  }
+  override def widget = new TextInput(required, _inputType = "number")
   
   /**
    * Returns a ValidationError if there are issues with compatability or is empty. Returns type T if
@@ -65,13 +61,13 @@ class NumericField[T](name: String)(implicit n: Numeric[T], man: Manifest[T])
 class NumericFieldOptional[T](name: String)(implicit n: Numeric[T], man: Manifest[T])
     extends Field[Option[T]](name) with BaseNumericField[T] {
   
+  override def required = false // needed because there's an extra [T] floating around in NumericField, so the
+                                  // Option doesn't get picked up correctly
+  
   /**
    * Sets the widget.
    */
-  override def widget = {
-    if(typeOf[T] == typeOf[Int] || typeOf[T] == typeOf[Long] || typeOf[T] == typeOf[Short]) new TextInput(required, _inputType = "number")
-    else new TextInput(required, _inputType = "number", _step=true)
-  }
+  override def widget = new TextInput(required, _inputType = "number")
   
   /**
    * Returns an Option[T] if the input is empty or valid, and a ValidationError if the
@@ -121,17 +117,17 @@ object NumericField {
   /**
    * Converts a string to type T when T is an Int, Double, Long, Short, or Float.
    */
-  def conversionFunction[T](implicit tag: TypeTag[T]): ((String => T), (String => String)) = {
-    if (typeOf[T] == typeOf[Int]) {
-      ((s: String) => s.toInt.asInstanceOf[T], (s: String) => "This value must be a positive or negative whole number.")
-    } else if (typeOf[T] == typeOf[Double]) {
-      ((s: String) => s.toDouble.asInstanceOf[T], (s: String) => "This value must be a number.")
-    } else if (typeOf[T] == typeOf[Long]) {
-      ((s: String) => s.toLong.asInstanceOf[T], (s: String) => "This value must be a number.")
-    } else if (typeOf[T] == typeOf[Short]) {
-      ((s: String) => s.toShort.asInstanceOf[T], (s: String) => "This value must be a number.")
-    } else if (typeOf[T] == typeOf[Float]) {
-      ((s: String) => s.toFloat.asInstanceOf[T], (s: String) => "This value must be a number.")
+  def conversionFunction[T](implicit tag: Manifest[T]): ((String => T), (String => String)) = {
+    if (manifest[T] == manifest[Int]) {
+      ((s: String) => s.toInt.asInstanceOf[T], (s: String) => "This value must be a positive or negative whole number (Int).")
+    } else if (manifest[T] == manifest[Double]) {
+      ((s: String) => s.toDouble.asInstanceOf[T], (s: String) => "This value must be a number (Double).")
+    } else if (manifest[T] == manifest[Long]) {
+      ((s: String) => s.toLong.asInstanceOf[T], (s: String) => "This value must be a positive or negative whole number (Long).")
+    } else if (manifest[T] == manifest[Short]) {
+      ((s: String) => s.toShort.asInstanceOf[T], (s: String) => "This value must be a positive or negative whole number (Short).")
+    } else if (manifest[T] == manifest[Float]) {
+      ((s: String) => s.toFloat.asInstanceOf[T], (s: String) => "This value must be a number (Float).")
     } else {
       throw new Exception("Numeric field only supported for Int, Double, Long, Short, and Float.")
     }

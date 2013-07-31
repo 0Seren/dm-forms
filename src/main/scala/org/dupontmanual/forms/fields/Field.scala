@@ -6,12 +6,11 @@ import org.dupontmanual.forms.validators._
 import org.dupontmanual.forms.Form
 import org.dupontmanual.forms.Binding
 import play.api.templates.Html
-import scala.reflect.runtime.universe._
 
 /**
  * A template for fields that are to be included in a form.
  */
-abstract class Field[T](val name: String)(implicit tag: TypeTag[T]) {
+abstract class Field[T](val name: String)(implicit tag: Manifest[T]) {
   
   /**
    * The list of validators that are used to make sure the user's input is correct.
@@ -23,7 +22,7 @@ abstract class Field[T](val name: String)(implicit tag: TypeTag[T]) {
    * is required or not. Is default set to false if the return type
    * is an Option and true if not.
    */
-  def required: Boolean = !(typeOf[T] <:< typeOf[Option[_]])
+  def required: Boolean = !(manifest[T] <:< manifest[Option[_]])
   
   /**
    * Sets the widget that is used for the Field.
@@ -109,18 +108,20 @@ abstract class Field[T](val name: String)(implicit tag: TypeTag[T]) {
     } else {
       Null
     }
-    widget.render(if (!onlyInitial) htmlName(bound.form) else htmlInitialName(bound.form), bound.asStringSeq(this), attrs.append(idAttr).append(
-        if((this.isInstanceOf[BaseRadioField[_,_]] || this.isInstanceOf[BaseCheckboxField[_,_]] || this.isInstanceOf[BaseFileField[_]])) Null
-        else new UnprefixedAttribute("style", "height:"+defaultHeight, Null)))
+    widget.render(if (!onlyInitial) htmlName(bound.form) else htmlInitialName(bound.form), bound.asStringSeq(this), attrs.append(idAttr))/*.append(
+        if((this.isInstanceOf[BaseRadioField[_,_]] || this.isInstanceOf[BaseCheckboxField[_]] || this.isInstanceOf[BaseFileField[_]])) Null
+        else new UnprefixedAttribute("style", "height:"+defaultHeight, Null)))*/
   }
 
   private[this] lazy val _errorMessages: Map[String, String] = {
     Map("required" -> "This field is required.",
-        "invalid" -> "Enter a valid value.")
+        "invalid" -> "Enter a valid value.",
+        "multiple" -> "Expected a single value, but got more than one.",
+        "unexpected" -> "An unexpected value was submitted.")
   }
   
   /**
-   * Sets some easy to use, global error messages, so messages al appear the same way.
+   * Sets some easy to use, global error messages, so messages all appear the same way.
    */
   def errorMessages = _errorMessages
   
@@ -135,7 +136,7 @@ abstract class Field[T](val name: String)(implicit tag: TypeTag[T]) {
   }
   
   /**
-   * Returns an object that is represenative of the user's selection. Optional fields
+   * Returns an object that is representative of the user's selection. Optional fields
    * will return an Option[T]
    */
   def asValue(s: Seq[String]): Either[ValidationError, T]

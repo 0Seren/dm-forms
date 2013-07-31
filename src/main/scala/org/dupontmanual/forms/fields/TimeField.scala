@@ -1,7 +1,5 @@
 package org.dupontmanual.forms.fields
 
-import scala.reflect.runtime.universe.TypeTag
-
 import org.joda.time.LocalTime
 import org.joda.time.format.{ DateTimeFormat, DateTimeFormatter, DateTimeFormatterBuilder }
 
@@ -15,7 +13,7 @@ import org.dupontmanual.forms.widgets.TimeInput
 /**
  * Creates methods common to both TimeField and TimeFieldOptional.
  */
-abstract class BaseTimeField[T](name: String, parser: DateTimeFormatter = BaseTimeField.defaultParser)(implicit tag: TypeTag[T])
+abstract class BaseTimeField[T](name: String, parser: DateTimeFormatter = BaseTimeField.defaultParser)(implicit man: Manifest[T])
     extends Field[T](name) {  
   
   /**

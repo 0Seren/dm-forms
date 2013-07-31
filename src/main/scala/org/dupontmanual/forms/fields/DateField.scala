@@ -1,7 +1,5 @@
 package org.dupontmanual.forms.fields
 
-import scala.reflect.runtime.universe._
-
 import org.joda.time.LocalDate
 import org.joda.time.format.{ DateTimeFormat, DateTimeFormatter }
 
@@ -11,7 +9,7 @@ import org.dupontmanual.forms.widgets.DateInput
 /**
  * Contains methods shared by DateField and DateFieldOptioanal. 
  */
-abstract class BaseDateField[T](name: String, parser: DateTimeFormatter = BaseDateField.usFormat)(implicit tag: TypeTag[T]) extends Field[T](name) {
+abstract class BaseDateField[T](name: String, parser: DateTimeFormatter = BaseDateField.usFormat)(implicit man: Manifest[T]) extends Field[T](name) {
   
   /**
    * Sets the widget for both DateField and DateFieldOptional

@@ -1,6 +1,9 @@
 package org.dupontmanual.forms.widgets
 
 import scala.xml._
+
+import play.api.libs.json.JsArray
+
 import org.dupontmanual.forms.validators.ValidationError
 
 /**
@@ -8,7 +11,7 @@ import org.dupontmanual.forms.validators.ValidationError
  */
 class AutocompleteInput(
   required: Boolean,
-  array: String = "",
+  array: JsArray = new JsArray(Nil),
   attrs: MetaData = Null) extends Widget(required, attrs) {
 
   /**
@@ -16,6 +19,6 @@ class AutocompleteInput(
    */
   def render(name: String, value: Seq[String], attrList: MetaData = Null) = {
     val valueAttr = if (value.isEmpty) "" else value(0)
-    <input type="text" name={name} class="ac" value={valueAttr} data-provide="typeahead" data-source={array} data-items="12" autocomplete="off"/> % attrs % reqAttr % attrList
+    <input type="text" name={name} class="ac" value={valueAttr} data-provide="typeahead" data-source={ array.toString } data-items="12" autocomplete="off"/> % attrs % reqAttr % attrList
   }
 }

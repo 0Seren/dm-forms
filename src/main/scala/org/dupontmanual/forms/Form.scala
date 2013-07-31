@@ -18,7 +18,7 @@ abstract class Form {
   def fields: List[Field[_]]
 
   /** Lets the Binding know if there are any form errors that occur.
-    * Defualt set to Nil.
+   * Default set to Nil.
     */
   def validate(data: ValidBinding): ValidationError = new ValidationError(Nil)
 
