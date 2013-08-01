@@ -31,7 +31,9 @@ class NumericField[T](name: String)(implicit n: Numeric[T], man: Manifest[T])
   /**
    * Sets the widget for the NumericField.
    */
-  override def widget = new TextInput(required, _inputType = "number")
+  override def widget = 
+    if(manifest[T] == manifest[Double] || manifest[T]==manifest[Float]) new TextInput(required, _inputType="number", _step=true)
+    else new TextInput(required, _inputType = "number")
   
   /**
    * Returns a ValidationError if there are issues with compatability or is empty. Returns type T if
