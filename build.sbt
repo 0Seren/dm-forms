@@ -54,10 +54,6 @@ pomExtra := (
     <url>git://github.com/dupontmanual/dm-forms.git</url>
     <connection>scm:git://github.com/dupontmanual/dm-forms.git</connection>
   </scm>
-  <organization>
-    <name>duPont Manual High School Computer Science Department</name>
-    <url>http://dupontmanual.github.io/</url>
-  </organization>
   <developers>
     <developer>
       <name>Allen Boss</name>
