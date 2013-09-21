@@ -8,7 +8,7 @@ organization := "org.dupontmanual"
 
 organizationName := "duPont Manual High School"
 
-version := "0.1-SNAPSHOT"
+version := "0.2-SNAPSHOT"
 
 scalaVersion := "2.10.2"
 
@@ -25,7 +25,7 @@ libraryDependencies ++= Seq(
     "org.webjars" % "bootstrap-datepicker" % "1.0.1",
     "org.webjars" % "bootstrap-timepicker" % "0.2.3",
     "org.webjars" % "jquery-maskedinput" % "1.3.1",
-    "org.scalatest" % "scalatest_2.10" % "2.0.M5b" % "test"
+    "org.scalatest" % "scalatest_2.10" % "2.0.M8" % "test"
 )
 
 publishMavenStyle := true
