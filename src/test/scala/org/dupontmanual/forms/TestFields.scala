@@ -331,4 +331,8 @@ class TestFields extends FunSuite {
     assert(f.asValue(Nil) === Right(List()))
   }
   
+  test("1. InfoField") {
+    val f = new InfoField("info", "stuff")
+  }
+  
 }

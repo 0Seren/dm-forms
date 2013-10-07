@@ -25,7 +25,7 @@ libraryDependencies ++= Seq(
     "org.webjars" % "bootstrap-datepicker" % "1.0.1",
     "org.webjars" % "bootstrap-timepicker" % "0.2.3",
     "org.webjars" % "jquery-maskedinput" % "1.3.1",
-    "org.scalatest" % "scalatest_2.10" % "2.0.M8" % "test"
+    "org.scalatest" %% "scalatest" % "2.0.M8" % "test"
 )
 
 publishMavenStyle := true

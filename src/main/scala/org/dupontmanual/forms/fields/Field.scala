@@ -108,7 +108,7 @@ abstract class Field[T](val name: String)(implicit tag: Manifest[T]) {
     } else {
       Null
     }
-    widget.render(if (!onlyInitial) htmlName(bound.form) else htmlInitialName(bound.form), bound.asStringSeq(this), attrs.append(idAttr).append(
+    widget.render(if (!onlyInitial) htmlName(bound.form) else htmlInitialName(bound.form), bound.asStringSeq(this), widgetAttrs(widget).append(attrs).append(idAttr).append(
         if((this.isInstanceOf[BaseFileField[_]] || this.isInstanceOf[BaseChoiceField[_,_]])) Null
         else new UnprefixedAttribute("style", "height:"+defaultHeight, Null)))
   }
