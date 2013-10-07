@@ -8,7 +8,7 @@ organization := "org.dupontmanual"
 
 organizationName := "duPont Manual High School"
 
-version := "0.2-SNAPSHOT"
+version := "0.1-SNAPSHOT"
 
 scalaVersion := "2.10.2"
 
