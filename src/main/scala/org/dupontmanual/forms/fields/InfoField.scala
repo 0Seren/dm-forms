@@ -7,9 +7,6 @@ class InfoField(name: String, value: String) extends TextField(name) {
   override def required = false
   override def initialVal = Some(value)
   override def widgetAttrs(widget: Widget) = {
-    super.widgetAttrs(widget).append(Attribute("disabled", Text("disabled"), Null))
+    super.widgetAttrs(widget).append(Attribute("readonly", Text("readonly"), Null))
   }
-  // disabled fields aren't sent in POST requests, so need to get data from 
-  // initial values
-  override def boundData(data: Seq[String], initial: Seq[String]) = initial
 }
