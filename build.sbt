@@ -10,14 +10,14 @@ organizationName := "duPont Manual High School"
 
 version := "0.2-SNAPSHOT"
 
-scalaVersion := "2.10.2"
+scalaVersion := "2.10.3"
 
 scalacOptions ++= Seq("-deprecation", "-feature")
 
 resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
 
 libraryDependencies ++= Seq(
-    "org.webjars" % "webjars-play_2.10" % "2.2.1",
+    "org.webjars" %% "webjars-play" % "2.2.1",
     "javax.mail" % "mail" % "1.4.7",
     "org.webjars" % "jquery" % "2.0.0",
     "org.webjars" % "bootstrap" % "2.3.2",
