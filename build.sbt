@@ -17,7 +17,7 @@ scalacOptions ++= Seq("-deprecation", "-feature")
 resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
 
 libraryDependencies ++= Seq(
-    "org.webjars" % "webjars-play_2.10" % "2.1.0-3",
+    "org.webjars" % "webjars-play_2.10" % "2.2.1",
     "javax.mail" % "mail" % "1.4.7",
     "org.webjars" % "jquery" % "2.0.0",
     "org.webjars" % "bootstrap" % "2.3.2",
@@ -25,7 +25,7 @@ libraryDependencies ++= Seq(
     "org.webjars" % "bootstrap-datepicker" % "1.0.1",
     "org.webjars" % "bootstrap-timepicker" % "0.2.3",
     "org.webjars" % "jquery-maskedinput" % "1.3.1",
-    "org.scalatest" %% "scalatest" % "2.0.M8" % "test"
+    "org.scalatest" %% "scalatest" % "2.0" % "test"
 )
 
 publishMavenStyle := true
