@@ -17,6 +17,7 @@ scalacOptions ++= Seq("-deprecation", "-feature")
 resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
 
 libraryDependencies ++= Seq(
+	"com.typesafe.play" %% "play" % "2.2.1",
     "org.webjars" %% "webjars-play" % "2.2.1",
     "javax.mail" % "mail" % "1.4.7",
     "org.webjars" % "jquery" % "2.0.0",
