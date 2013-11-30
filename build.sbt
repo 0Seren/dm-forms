@@ -10,7 +10,7 @@ organizationName := "duPont Manual High School"
 
 version := "0.2-SNAPSHOT"
 
-scalaVersion := "2.10.3"
+scalaVersion := "2.10.2"
 
 scalacOptions ++= Seq("-deprecation", "-feature")
 
@@ -19,14 +19,14 @@ resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/release
 libraryDependencies ++= Seq(
 	"com.typesafe.play" %% "play" % "2.2.1",
     "org.webjars" %% "webjars-play" % "2.2.1",
-    "javax.mail" % "mail" % "1.4.7",
+    "javax.mail" % "mail" % "latest.release",
     "org.webjars" % "jquery" % "2.0.0",
     "org.webjars" % "bootstrap" % "2.3.2",
     "org.webjars" % "jquery-ui" % "1.10.2-1",
     "org.webjars" % "bootstrap-datepicker" % "1.0.1",
     "org.webjars" % "bootstrap-timepicker" % "0.2.3",
     "org.webjars" % "jquery-maskedinput" % "1.3.1",
-    "org.scalatest" %% "scalatest" % "2.0" % "test"
+    "org.scalatest" %% "scalatest" % "latest.release" % "test"
 )
 
 publishMavenStyle := true
