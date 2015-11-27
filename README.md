@@ -13,7 +13,7 @@ using Twitter Bootstrap, so they look pretty. Validation is easy, and occurs bot
 server-side, and `Field`s give you back Scala instances that have already been converted into the
 type you were expecting.
 
-For more information visit http://dupontmanualhs.github.io/dm-forms/.
+For more information visit https://0seren.github.io/dm-forms/.
 
 Released under the Apache 2 License, to be compatible with Play licensing.
 
